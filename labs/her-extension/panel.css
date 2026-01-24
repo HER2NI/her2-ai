@@ -1,0 +1,17 @@
+html,body{height:100%;margin:0;background:transparent;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{
+  height:100%;
+  background: radial-gradient(circle at top,#111827 0,#050814 55%,#020309 100%);
+  border-left:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;
+}
+.topbar{padding:12px 12px 6px}
+.title{color:#e5e7eb;font-weight:800;letter-spacing:.2em}
+.sub{color:#a0aec0;font-size:12px;margin-top:4px}
+canvas{width:100%;height:auto;display:block;background:#000;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+.hud{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px}
+.pill{color:#e5e7eb;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.35)}
+.actions{display:flex;gap:10px;align-items:center;padding:8px 12px}
+button{cursor:pointer;border-radius:999px;border:1px solid rgba(79,209,197,.45);background:rgba(79,209,197,.12);color:#e0fdf7;padding:8px 12px;text-transform:uppercase;font-size:11px;letter-spacing:.08em}
+.check{color:#a0aec0;font-size:12px;display:flex;gap:6px;align-items:center}
+.fine{padding:10px 12px;color:rgba(160,174,192,.85);font-size:11px;line-height:1.45}

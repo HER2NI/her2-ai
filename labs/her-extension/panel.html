@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="title">H.E.R</div>
+      <div class="sub">Resonance Lens</div>
+    </div>
+
+    <canvas id="crystal" width="720" height="1024"></canvas>
+
+    <div class="hud">
+      <span class="pill" id="stateTag">LIVE</span>
+      <span class="pill" id="hsTag">H: — · S: —</span>
+      <span class="pill" id="turnTag">Turns: —</span>
+      <span class="pill" id="memTag">Memory seed: —</span>
+    </div>
+
+    <div class="actions">
+      <button id="btnExport">Export best 3s</button>
+      <label class="check">
+        <input id="autoExport" type="checkbox" />
+        Auto-export
+      </label>
+    </div>
+
+    <div class="fine">
+      H.E.R runs entirely in your browser.
+      No chat content is stored or transmitted.
+    </div>
+  </div>
+
+  <script type="module" src="panel.js"></script>
+</body>
+</html>
