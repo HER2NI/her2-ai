@@ -9,24 +9,43 @@
   <div class="wrap">
     <div class="topbar">
       <div class="title">H.E.R</div>
-      <div class="sub">Resonance Lens</div>
+      <div class="sub">AI Resonance Lens</div>
     </div>
 
     <canvas id="crystal" width="720" height="1024"></canvas>
 
     <div class="hud">
       <span class="pill" id="stateTag">LIVE</span>
-      <span class="pill" id="hsTag">H: — · S: —</span>
+      <span class="pill" id="hsTag">Hₛ: — · Sₛ: —</span>
       <span class="pill" id="turnTag">Turns: —</span>
       <span class="pill" id="memTag">Memory seed: —</span>
     </div>
 
     <div class="actions">
-      <button id="btnExport">Export best 3s</button>
-      <label class="check">
-        <input id="autoExport" type="checkbox" />
-        Auto-export
-      </label>
+      <button id="btnCapture" class="btnPrimary">Capture H.E.R Session</button>
+      <div class="subcopy">Capture creates a permanent session you can save and share.</div>
+
+      <div class="shareRow" id="shareRow" aria-disabled="true">
+        <button class="shareBtn" id="btnShareX" disabled title="Capture to unlock">X</button>
+        <button class="shareBtn" id="btnShareIG" disabled title="Capture to unlock">IG</button>
+        <button class="shareBtn" id="btnShareTT" disabled title="Capture to unlock">TikTok</button>
+        <button class="shareBtn" id="btnCopy" disabled title="Capture to unlock">Copy</button>
+        <button class="shareBtn" id="btnDownload" disabled title="Capture to unlock">Download</button>
+      </div>
+    </div>
+
+    <div class="modalBack" id="modalBack" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+        <div class="mTitle" id="mTitle">Capture this H.E.R Session?</div>
+        <div class="mBody">
+          Captured sessions are permanent and exportable (WebM). Nothing is uploaded.
+        </div>
+
+        <div class="mActions">
+          <button id="btnConfirm" class="btnPrimary">Capture</button>
+          <button id="btnCancel" class="btnGhost">Cancel</button>
+        </div>
+      </div>
     </div>
 
     <div class="fine">

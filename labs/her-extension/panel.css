@@ -1,3 +1,4 @@
+[hidden]{display:none !important;}
 html,body{height:100%;margin:0;background:transparent;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
 .wrap{
   height:100%;
@@ -15,3 +16,49 @@ canvas{width:100%;height:auto;display:block;background:#000;border-top:1px solid
 button{cursor:pointer;border-radius:999px;border:1px solid rgba(79,209,197,.45);background:rgba(79,209,197,.12);color:#e0fdf7;padding:8px 12px;text-transform:uppercase;font-size:11px;letter-spacing:.08em}
 .check{color:#a0aec0;font-size:12px;display:flex;gap:6px;align-items:center}
 .fine{padding:10px 12px;color:rgba(160,174,192,.85);font-size:11px;line-height:1.45}
+
+#hsTag { text-transform: none !important; }
+
+/* --- Actions / Capture --- */
+.actions{display:flex;flex-direction:column;gap:10px;align-items:stretch;padding:10px 12px}
+.btnPrimary{
+  cursor:pointer;border-radius:999px;border:1px solid rgba(79,209,197,.45);
+  background:rgba(79,209,197,.12);color:#e0fdf7;padding:10px 12px;
+  text-transform:uppercase;font-size:11px;letter-spacing:.08em
+}
+.btnGhost{
+  cursor:pointer;border-radius:999px;border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.25);color:#e5e7eb;padding:10px 12px;
+  text-transform:uppercase;font-size:11px;letter-spacing:.08em
+}
+.subcopy{color:rgba(160,174,192,.9);font-size:11px;line-height:1.35}
+
+/* --- Share row --- */
+.shareRow{display:flex;gap:8px;flex-wrap:wrap}
+.shareBtn{
+  cursor:pointer;border-radius:999px;border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.25);color:#e5e7eb;padding:8px 10px;
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase
+}
+.shareBtn:disabled{
+  opacity:.35;cursor:not-allowed
+}
+
+/* --- Modal --- */
+.modalBack{
+  position:fixed;inset:0;z-index:1000000;
+  background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;
+  padding:14px
+}
+.modal{
+  width:min(340px,92vw);
+  background:linear-gradient(145deg,#050816,#020309);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.75);
+  padding:14px
+}
+.mTitle{color:#e5e7eb;font-weight:800;letter-spacing:.08em;margin-bottom:8px}
+.mBody{color:rgba(160,174,192,.92);font-size:12px;line-height:1.5}
+.mActions{display:flex;gap:10px;margin-top:12px}
+.mActions button{flex:1}

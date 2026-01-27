@@ -91,7 +91,7 @@ function renderIdle(time) {
 
   drawCrystal(time, h, s, "ICE", null);
 
-  setHud("IDLE", h, s);
+  setHud("IDLE", h, s, false);
 }
 
 function renderRun(time) {
@@ -124,9 +124,13 @@ function renderRun(time) {
   setHud(state, h, s);
 }
 
-function setHud(state, h, s) {
+function setHud(state, h, s, showT = true) {
   if (hud.stateTag) hud.stateTag.textContent = state;
-  if (hud.hsTag) hud.hsTag.textContent = `H: ${h.toFixed(2)} · S: ${s.toFixed(2)}`;
+  if (hud.hsTag) {
+  hud.hsTag.textContent = showT
+    ? `Hₛ(t): ${h.toFixed(2)} · Sₛ(t): ${s.toFixed(2)}`
+    : `Hₛ: ${h.toFixed(2)} · Sₛ: ${s.toFixed(2)}`;
+  }
   if (hud.memTag) hud.memTag.textContent = memString(mem);
 }
 
