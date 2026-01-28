@@ -36,6 +36,14 @@ const mem = loadMemorySeed();
 // state machine
 let smState = "IDLE";
 
+// ====== LOCK STATE (set by panel.js) ======
+let HER_LOCKED = false;
+
+// panel can toggle this without rebuilding turns
+export function setHERLocked(on) {
+  HER_LOCKED = !!on;
+}
+
 // ====== PUBLIC API ======
 export function initHER(opts) {
   canvas = opts.canvas;
@@ -156,19 +164,28 @@ function drawCrystal(time, h, s, state, idxFloat) {
   const fieldK = fieldStrength * FIELD_MUTE;
   const geoK   = Math.min(1.0, geoStrength * GEO_BOOST);
 
-  drawAuroraField(time, pal, state, h, fieldK);
+    // Silent "paused" feel when locked: desaturate field + soften geometry slightly
+  let fieldKM = fieldK;
+  let geoKM = geoK;
+
+  if (HER_LOCKED) {
+    fieldKM = fieldK * 0.55;          // background more muted
+    geoKM = Math.min(1.0, geoK * 0.85); // geometry slightly softened, still alive
+  }
+
+  drawAuroraField(time, pal, state, h, fieldKM);
 
   if (graph.nodes.length) {
     const stability = clamp01(0.15 + 0.85 * s) * (0.75 + 0.25 * intro);
     stepGraph(graph, stability, time);
-    drawGraph(graph, pal, state, h, s, geoK);
+    drawGraph(graph, pal, state, h, s, geoKM);
   }
 
-  drawCenterMark(time, pal, state, geoK);
+  drawCenterMark(time, pal, state, geoKM);
 
   if (idxFloat != null) {
     const p = idxFloat / Math.max(1, parsed.turns.length - 1);
-    drawTimelineMarker(p, pal, fieldK);
+    drawTimelineMarker(p, pal, fieldKM);
   }
 }
 
@@ -576,7 +593,10 @@ function drawTimelineMarker(p, pal, strength) {
   ctx.fillStyle = "rgba(255,255,255,0.10)";
   ctx.fillRect(x, y, w, h);
 
-  ctx.fillStyle = `rgba(${Math.floor(pal.nodeR*255)},${Math.floor(pal.nodeG*255)},${Math.floor(pal.nodeB*255)},${clamp01(0.25 + 0.6*strength)})`;
+  const a = clamp01(0.25 + 0.6 * strength);
+  const alpha = HER_LOCKED ? a * 0.35 : a;
+
+  ctx.fillStyle = `rgba(${Math.floor(pal.nodeR*255)},${Math.floor(pal.nodeG*255)},${Math.floor(pal.nodeB*255)},${alpha})`;
   ctx.fillRect(x, y, Math.max(2, w*p), h);
   ctx.restore();
 }
