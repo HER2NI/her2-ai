@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="title">H.E.R</div>
+      <div class="sub">AI Resonance Lens</div>
+    </div>
+
+    <canvas id="crystal" width="720" height="1024"></canvas>
+
+    <div class="hud">
+      <span class="pill" id="stateTag">IDLE</span>
+      <span class="pill" id="hsTag">Hₛ: — · Sₛ: —</span>
+      <span class="pill" id="turnTag">TURNS: —</span>
+      <span class="pill" id="memTag">MEMORY SEED: —</span>
+    </div>
+
+    <div class="actions">
+      <button id="btnCapture" class="btnPrimary">Capture H.E.R Session</button>
+      <div class="subcopy">Capture creates a permanent session you can save and share.</div>
+
+      <div class="shareRow" id="shareRow" aria-disabled="true">
+        <button class="shareBtn" id="btnShareX" disabled title="Capture to unlock">X</button>
+        <button class="shareBtn" id="btnShareIG" disabled title="Capture to unlock">IG</button>
+        <button class="shareBtn" id="btnShareTT" disabled title="Capture to unlock">TikTok</button>
+        <button class="shareBtn" id="btnCopy" disabled title="Capture to unlock">Copy</button>
+        <button class="shareBtn" id="btnDownload" disabled title="Capture to unlock">Download</button>
+      </div>
+    </div>
+
+    <div class="modalBack" id="modalBack" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+        <div class="mTitle" id="mTitle">Capture this H.E.R Session?</div>
+        <div class="mBody">
+          Captured sessions are permanent and exportable (WebM). Nothing is uploaded.
+        </div>
+
+        <div class="mActions">
+          <button id="btnConfirm" class="btnPrimary">Capture</button>
+          <button id="btnCancel" class="btnGhost">Cancel</button>
+        </div>
+     </div>
+    </div>
+
+    <div class="fine">
+      H.E.R runs entirely in your browser.
+      No chat content is stored or transmitted.
+    </div>
+  </div>
+
+  <script type="module" src="panel.js"></script>
+</body>
+</html>
