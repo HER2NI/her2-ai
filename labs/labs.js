@@ -1,3 +1,6 @@
+/*
+ * © HER2NI / Steve Black. Proprietary — Evaluation Use Only. No redistribution without permission.
+ */
 // labs.js — H.E.R-Crystal v0.2 (H(t) field + S(t) geometry + intro void + breath pulse)
 
 import { fbm2D } from "./noise.js";
