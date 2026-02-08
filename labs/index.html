@@ -131,20 +131,12 @@ Etc."></textarea>
         </div>
 
         <div class="canvasWrap">
-          <canvas id="crystal" width="960" height="666"></canvas>
-          <div class="hud hudTop">
-            <div class="hudRow">
-              <span class="tag" id="stateTag">IDLE</span>
-              <span class="tag" id="htTag">Hₛ: — · Sₛ: —</span>
-              <span class="tag" id="turnTag">TURNS: —</span>
-            </div>
-          </div>
-
-          <div class="hud hudBottom">
-            <div class="hudRow">
-              <span class="tag" id="memTag">MEMORY SEED: —</span>
-            </div>
-          </div>
+          <iframe
+            id="herPanelFrame"
+            title="H.E.R Panel"
+            src="./her-extension/panel.html"
+            style="width:380px;height:100vh;border:0;display:block;"
+          ></iframe>
         </div>
 
         <div class="captureBar">
