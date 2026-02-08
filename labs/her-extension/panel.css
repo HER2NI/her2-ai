@@ -10,7 +10,6 @@ html,body{height:100%;margin:0;background:#020309;color:rgba(160,174,192,.85);fo
 .title{color:#e5e7eb;font-weight:800;letter-spacing:.2em}
 .sub{color:#a0aec0;font-size:12px;margin-top:4px}
 canvas{width:100%;height:auto;display:block;background:#000;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-#crystal{display:block;margin:0 auto}
 .hud{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px}
 .pill{color:#e5e7eb;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.35)}
 .actions{display:flex;gap:10px;align-items:center;padding:8px 12px}
