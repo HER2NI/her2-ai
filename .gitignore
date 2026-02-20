@@ -11,3 +11,6 @@
 
 # never commit packaged extension zips
 *.zip
+
+# secrets
+*.pem
