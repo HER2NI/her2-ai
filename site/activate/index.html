@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H.E.R Activation</title>
+  <style>
+    body {
+      margin: 0;
+      background: #020309;
+      color: #e5e7eb;
+      font: 14px/1.45 system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 28px 16px 40px;
+    }
+    .card {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      background: rgba(5, 8, 22, 0.8);
+      padding: 14px;
+    }
+    h1 { margin: 0 0 8px; font-size: 20px; letter-spacing: 0.04em; }
+    .muted { color: rgba(160, 174, 192, 0.95); }
+    .code {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(0, 0, 0, 0.3);
+      word-break: break-all;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    button {
+      cursor: pointer;
+      border-radius: 999px;
+      border: 1px solid rgba(79, 209, 197, 0.48);
+      background: rgba(79, 209, 197, 0.12);
+      color: #e0fdf7;
+      padding: 9px 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .status { margin-top: 12px; color: rgba(160, 174, 192, 0.98); }
+    .links { margin-top: 14px; font-size: 12px; color: rgba(160, 174, 192, 0.98); }
+    .links a { color: #8ee7dc; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>H.E.R Activation</h1>
+    <p class="muted">Auto-activation attempts to send your paid checkout session to the installed extension.</p>
+
+    <div class="card">
+      <div><strong>Activation code</strong></div>
+      <div id="sessionCode" class="code">-</div>
+      <div class="row">
+        <button id="btnCopy" type="button">Copy code</button>
+      </div>
+      <div id="status" class="status">Waiting...</div>
+      <p class="muted" style="margin-top:12px;">Fallback: Open H.E.R -> Pro -> paste this activation code.</p>
+      <p class="links">
+        <a href="/privacy">Privacy</a>
+        <span> · </span>
+        <a href="/terms">Terms</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Replace with Chrome Web Store extension ID at release time (production).
+    const DEFAULT_EXTENSION_ID = "REPLACE_WITH_CHROME_WEB_STORE_EXTENSION_ID";
+
+    function q(id) { return document.getElementById(id); }
+    function setStatus(msg) { q("status").textContent = msg; }
+
+    function getParams() {
+      return new URLSearchParams(window.location.search || "");
+    }
+
+    async function copyCode(code) {
+      try {
+        await navigator.clipboard.writeText(code);
+        setStatus("Activation code copied.");
+      } catch {
+        setStatus("Copy failed.");
+      }
+    }
+
+    function tryAutoActivate(sessionId) {
+      return new Promise((resolve, reject) => {
+        if (!window.chrome || !chrome.runtime || typeof chrome.runtime.sendMessage !== "function") {
+          reject(new Error("browser messaging unavailable"));
+          return;
+        }
+        if (!DEFAULT_EXTENSION_ID || DEFAULT_EXTENSION_ID === "REPLACE_WITH_CHROME_WEB_STORE_EXTENSION_ID") {
+          reject(new Error("extension id not configured"));
+          return;
+        }
+
+        chrome.runtime.sendMessage(
+          DEFAULT_EXTENSION_ID,
+          { type: "HER_ACTIVATE_CHECKOUT", session_id: sessionId },
+          (response) => {
+            const err = chrome.runtime.lastError;
+            if (err) {
+              reject(new Error(err.message || "extension unavailable"));
+              return;
+            }
+            if (!response || response.ok !== true) {
+              reject(new Error(response?.reason || "activation failed"));
+              return;
+            }
+            resolve(response);
+          }
+        );
+      });
+    }
+
+    (async function init() {
+      const params = getParams();
+      const canceled = params.get("canceled");
+      const sessionId = String(params.get("session_id") || "").trim();
+
+      q("sessionCode").textContent = sessionId || "(missing session_id)";
+      q("btnCopy").addEventListener("click", () => copyCode(sessionId || ""));
+
+      if (canceled === "1") {
+        setStatus("Checkout canceled.");
+        return;
+      }
+      if (!sessionId) {
+        setStatus("Missing checkout session id.");
+        return;
+      }
+
+      setStatus("Attempting auto-activation...");
+      try {
+        await tryAutoActivate(sessionId);
+        setStatus("Activated. Return to H.E.R Pro.");
+      } catch (err) {
+        setStatus(`Auto-activation unavailable: ${err.message}. Use fallback.`);
+      }
+    })();
+  </script>
+</body>
+</html>

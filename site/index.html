@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HER2NI - Local-first AI tooling</title>
+  <meta name="description" content="HER2NI local-first AI tooling: H.E.R interaction visualisation and OPAL forensic evidence system." />
+  <link rel="canonical" href="https://her2.ai/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/her_helix_32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/her_helix_64.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/her_helix_128.png" />
+  <style>
+    :root {
+      --bg: #020309;
+      --card: rgba(5, 8, 22, 0.84);
+      --card-alt: rgba(15, 23, 42, 0.6);
+      --text: #e5e7eb;
+      --muted: #a0aec0;
+      --accent: #4fd1c5;
+      --border: rgba(255, 255, 255, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 14px/1.55 system-ui, -apple-system, Segoe UI, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #111827 0, #050814 55%, #020309 100%);
+      min-height: 100vh;
+    }
+    .page { max-width: 980px; margin: 0 auto; padding: 28px 16px 48px; }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    h1 { margin: 0; font-size: 28px; line-height: 1.25; }
+    .subtitle { margin-top: 10px; color: var(--muted); max-width: 760px; }
+    .grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      background: var(--card);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55);
+    }
+    .card.alt { background: var(--card-alt); }
+    h2 { margin: 0; font-size: 20px; line-height: 1.3; }
+    ul { margin: 10px 0 0 18px; padding: 0; }
+    li { margin: 6px 0; color: var(--muted); }
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      border: 1px solid rgba(79, 209, 197, 0.55);
+      color: #e0fdf7;
+      background: rgba(79, 209, 197, 0.14);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 9px 13px;
+    }
+    .privacy {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(2, 3, 9, 0.65);
+    }
+    .privacy p { margin: 6px 0; color: var(--muted); }
+    footer {
+      margin-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="eyebrow">HER2NI</div>
+    <h1>HER2NI - Local-first AI tooling</h1>
+    <p class="subtitle">Two product tracks: H.E.R for local-first interaction observability, and OPAL for case-scoped forensic evidence artifacts.</p>
+
+    <section class="grid" aria-label="Product cards">
+      <article class="card">
+        <h2>H.E.R - Local-first AI interaction visualisation (Chrome extension)</h2>
+        <ul>
+          <li>Runs locally in your browser</li>
+          <li>No chat uploads</li>
+          <li>Free trial (50 turns) -> pay to continue</li>
+          <li>Evaluator overlays + tracks</li>
+        </ul>
+        <a class="btn" href="/her">Open H.E.R</a>
+      </article>
+
+      <article class="card alt">
+        <h2>OPAL - Forensic evidence system (case-scoped)</h2>
+        <ul>
+          <li>Evidence artifacts</li>
+          <li>Court/audit-ready bundles</li>
+          <li>Case-scoped engagements</li>
+        </ul>
+        <a class="btn" href="/opal">Open OPAL</a>
+      </article>
+    </section>
+
+    <section class="privacy" aria-label="Privacy summary">
+      <p>H.E.R runs locally by default. No chat content is stored or transmitted.</p>
+      <p>Optional localhost embeddings may send text to a user-configured localhost endpoint.</p>
+      <p>Licensing sends only device identifier and Stripe session ID; no chat content is transmitted.</p>
+    </section>
+
+    <footer>
+      <a href="/privacy">Privacy</a>
+      <span>·</span>
+      <a href="/terms">Terms</a>
+      <span>·</span>
+      <a href="mailto:licensing@her2.ai">licensing@her2.ai</a>
+    </footer>
+  </main>
+</body>
+</html>

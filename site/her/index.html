@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H.E.R - Local-first AI interaction visualisation</title>
+  <meta name="description" content="H.E.R local-first AI interaction visualisation for Chrome. Free trial (50 turns), unlock to continue." />
+  <link rel="canonical" href="https://her2.ai/her/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/her_helix_32.png" />
+  <style>
+    :root {
+      --bg: #020309;
+      --card: rgba(5, 8, 22, 0.84);
+      --text: #e5e7eb;
+      --muted: #a0aec0;
+      --accent: #4fd1c5;
+      --border: rgba(255, 255, 255, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 14px/1.55 system-ui, -apple-system, Segoe UI, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #111827 0, #050814 55%, #020309 100%);
+      min-height: 100vh;
+    }
+    .page { max-width: 900px; margin: 0 auto; padding: 28px 16px 48px; }
+    .crumb { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+    .crumb a { color: var(--accent); text-decoration: none; }
+    h1 { margin: 0; font-size: 30px; line-height: 1.2; }
+    .sub { margin-top: 10px; color: var(--muted); max-width: 760px; }
+    .cta { margin-top: 14px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn {
+      border: 1px solid rgba(79, 209, 197, 0.55);
+      color: #e0fdf7;
+      background: rgba(79, 209, 197, 0.14);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 9px 13px;
+    }
+    .card {
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      background: var(--card);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55);
+    }
+    h2 { margin: 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    ul { margin: 10px 0 0 18px; padding: 0; }
+    li { margin: 6px 0; color: var(--muted); }
+    p { margin: 10px 0 0; color: var(--muted); }
+    footer {
+      margin-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="crumb"><a href="/">HER2NI hub</a> / H.E.R</div>
+    <h1>H.E.R - Local-first AI interaction visualisation</h1>
+    <p class="sub">See interaction signals evolve. Free trial (50 turns). Unlock to continue.</p>
+
+    <div class="cta">
+      <a class="btn" href="https://chromewebstore.google.com/detail/REPLACE_ME" target="_blank" rel="noopener noreferrer">Install from Chrome Web Store</a>
+      <a class="btn" href="/activate">Already purchased? Activate</a>
+    </div>
+
+    <section class="card">
+      <h2>What it does</h2>
+      <ul>
+        <li>Visualises interaction signal trajectories across multi-turn sessions.</li>
+        <li>Supports evaluator import overlays and signal tracks in Pro mode.</li>
+        <li>Exports local telemetry JSON for evidence and review workflows.</li>
+        <li>Maintains session continuity while remaining local-first.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Privacy</h2>
+      <p>H.E.R runs locally by default. No chat content is stored or transmitted.</p>
+      <p>Optional localhost embeddings may send text to a user-configured localhost endpoint.</p>
+      <p>Licensing sends only device identifier and Stripe session ID; no chat content is transmitted.</p>
+    </section>
+
+    <section class="card">
+      <h2>How Pro works</h2>
+      <p>Free trial covers the first 50 turns. Unlock extends visibility for full-session continuity and Pro analysis features.</p>
+    </section>
+
+    <section class="card">
+      <h2>Support</h2>
+      <p>Email: <a href="mailto:licensing@her2.ai">licensing@her2.ai</a></p>
+    </section>
+
+    <footer>
+      <a href="/privacy">Privacy</a>
+      <span>·</span>
+      <a href="/terms">Terms</a>
+      <span>·</span>
+      <a href="mailto:licensing@her2.ai">licensing@her2.ai</a>
+    </footer>
+  </main>
+</body>
+</html>
