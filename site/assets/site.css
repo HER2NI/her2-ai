@@ -431,6 +431,41 @@ footer a { color: var(--accent); }
   margin-top: 16px;
 }
 
+/* HER page overrides */
+.page.page-her .card {
+  padding: 16px;
+  margin-top: 14px;
+}
+
+.page.page-her h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  max-width: 860px;
+}
+
+.page.page-her .sub {
+  max-width: 760px;
+}
+
+.page.page-her h2 {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.page.page-her ul {
+  margin-top: 10px;
+}
+
+.page.page-her footer {
+  margin-top: 18px;
+}
+
+.page.page-her .cta .btn {
+  padding: 9px 13px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
 @media (max-width: 860px) {
   .page.page-hub .grid { grid-template-columns: 1fr; }
 }
