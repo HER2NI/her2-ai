@@ -14,3 +14,7 @@
 
 # secrets
 *.pem
+
+# never commit licensing private keys
+labs/her-extension/tools/*.pem
+
