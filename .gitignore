@@ -18,3 +18,8 @@
 # never commit licensing private keys
 labs/her-extension/tools/*.pem
 
+
+# never publish extension runtime from labs
+labs/her-extension/manifest.json
+labs/her-extension/background.js
+labs/her-extension/license.js
