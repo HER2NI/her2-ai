@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>H.E.R Privacy</title>
+  <meta name="description" content="Privacy boundary for H.E.R structural telemetry, memory modes, provider calls, and data requests." />
+  <link rel="canonical" href="https://her2.ai/privacy/" />
+
+  <style>
+    :root { color-scheme: dark; --bg:#03050b; --card:#0b1020; --line:rgba(255,255,255,.12); --text:#f7fbff; --muted:#aab6c8; --cyan:#4fd1c5; --blue:#55aaff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; color:var(--text); background: radial-gradient(circle at 20% 0%, rgba(85,170,255,.22), transparent 30%), radial-gradient(circle at 80% 12%, rgba(79,209,197,.14), transparent 32%), linear-gradient(180deg,#050814,#02030a 70%,#000); line-height:1.6; }
+    .page { width:min(920px, calc(100% - 36px)); margin:0 auto; padding:34px 0 56px; }
+    header, footer { display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap; }
+    header { margin-bottom:48px; }
+    footer { margin-top:44px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); padding-top:24px; }
+    .brand { color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+    nav { display:flex; gap:10px; flex-wrap:wrap; }
+    a { color:var(--cyan); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    nav a, .btn { border:1px solid var(--line); border-radius:999px; padding:9px 13px; color:#dce8ff; background:rgba(7,12,24,.58); font-size:12px; text-transform:uppercase; letter-spacing:.08em; text-decoration:none; }
+    .btn-primary { border-color:rgba(79,209,197,.75); color:#f2fffd; background:rgba(79,209,197,.12); }
+    .hero, .card { border:1px solid var(--line); border-radius:26px; background:rgba(10,16,32,.76); box-shadow:0 30px 90px rgba(0,0,0,.5); padding:28px; }
+    .hero { margin-bottom:22px; }
+    h1 { font-size:clamp(38px,7vw,74px); line-height:.98; letter-spacing:-.06em; margin:0 0 18px; text-transform:uppercase; }
+    h2 { font-size:28px; line-height:1.15; margin:0 0 14px; }
+    h3 { margin:22px 0 8px; }
+    p, li { color:var(--muted); }
+    .lead { font-size:20px; color:#d8e5f8; max-width:780px; }
+    .trust { margin-top:18px; color:#c8d3e6; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:16px; }
+    .card { padding:22px; }
+    .fine { font-size:13px; color:#8f9caf; }
+    ul { padding-left:20px; }
+    @media (max-width:720px) { .grid { grid-template-columns:1fr; } h1 { font-size:40px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <a class="brand" href="/">H.E.R</a>
+      <nav aria-label="Primary navigation">
+        <a href="/early-access/">Early access</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/support/">Support</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <h1>Privacy boundary</h1>
+      <p class="lead">H.E.R maps structural telemetry and reduced signals from interactions you choose to have through her. The goal is bounded interaction continuity, not hidden surveillance.</p>
+    </section>
+    <section class="card">
+      <h2>What H.E.R may process</h2>
+      <ul>
+        <li>Interaction traces you enter or route through H.E.R.</li>
+        <li>Structural telemetry and reduced signals such as context, constraints, drift, recovery, continuity, and signal state.</li>
+        <li>Explicit memory mode choices, consent state, and product settings.</li>
+      </ul>
+      <h3>Memory modes</h3>
+      <p>Memory is explicit. Modes may include memory off, session-specific memory, restricted memory, or future durable continuity modes. Durable learning should require visible controls and user choice.</p>
+      <h3>Provider calls</h3>
+      <p>When you use model features, provider calls may send user prompts and bounded context to selected AI providers so they can generate responses. Provider payloads should be limited to the selected interaction need.</p>
+      <h3>H.E.R-ID boundary</h3>
+      <p>H.E.R-ID is not intended to be exposed as a raw provider tracking handle.</p>
+      <h3>No sale or advertising tracking in MVP</h3>
+      <p>H.E.R does not sell personal data. H.E.R does not use advertising tracking in the MVP unless later disclosed.</p>
+      <h3>Requests</h3>
+      <p>For privacy, export, or delete requests, contact <a href="mailto:research@her2ni.ai?subject=H.E.R%20privacy%20request">research@her2ni.ai</a>.</p>
+    </section>
+
+    <footer>
+      <div>© 2026 HER2NI LLC. H.E.R and HER2NI. Patent pending: AU Provisional Patent Application No. 2026904580, filed 12 May 2026. All rights reserved.</div>
+      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/support/">Support</a> · <a href="mailto:research@her2ni.ai">Contact</a></div>
+    </footer>
+  </main>
+</body>
+</html>
