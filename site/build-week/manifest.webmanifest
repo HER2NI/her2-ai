@@ -1,0 +1,21 @@
+{
+  "name": "H.E.R",
+  "short_name": "H.E.R",
+  "description": "One human. Many intelligences. One truthful interface.",
+  "start_url": "/build-week/",
+  "display": "standalone",
+  "background_color": "#02050c",
+  "theme_color": "#020712",
+  "icons": [
+    {
+      "src": "/build-week/assets/her-ring-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/build-week/assets/her-ring-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

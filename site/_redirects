@@ -1,0 +1,5 @@
+# Normalize the Build Week route.
+/build-week /build-week/ 301
+
+# Optional production promotion AFTER the full prototype and page are approved:
+# / /build-week/ 302
