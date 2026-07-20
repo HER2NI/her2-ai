@@ -228,15 +228,23 @@
 
     .wordmark {
       margin: 0 0 16px;
-      font-size: clamp(72px, 9.2vw, 136px);
-      font-family: "Helvetica Neue", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+      display: inline-block;
+      font-family:
+        "DIN Alternate",
+        "DIN Condensed",
+        "Helvetica Neue",
+        sans-serif;
       font-weight: 200;
-      line-height: 0.88;
+      font-size: clamp(74px, 9.4vw, 140px);
       letter-spacing: 0.25em;
+      line-height: 0.88;
       white-space: nowrap;
+      transform: scaleX(0.94);
+      transform-origin: left center;
       text-shadow:
-        0 0 12px rgba(194, 231, 255, 0.34),
-        0 0 38px rgba(87, 174, 255, 0.17);
+        0 0 7px rgba(242, 251, 255, 0.56),
+        0 0 18px rgba(174, 220, 255, 0.30),
+        0 0 38px rgba(72, 163, 255, 0.17);
     }
     .wordmark sup {
       margin-left: 0.04em;
