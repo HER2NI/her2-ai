@@ -189,6 +189,20 @@
       min-height: 760px;
     }
 
+    .hero-content { position: relative; }
+
+    .hero-device-mark {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      top: -104px;
+      left: 43%;
+      transform: translateX(-50%);
+      opacity: 0.78;
+      pointer-events: none;
+      user-select: none;
+    }
+
     .status {
       display: inline-flex;
       align-items: center;
@@ -811,6 +825,14 @@
       .identity-art figcaption { display: none; }
       .film-card { grid-template-columns: 1fr; padding: 25px; }
       .film-youtube-link { width: 100%; }
+      .hero-device-mark {
+        position: static;
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 24px;
+        transform: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -847,7 +869,15 @@
 
   <main id="main">
     <section class="shell hero" aria-labelledby="hero-title">
-      <div>
+      <div class="hero-content">
+        <img
+          class="hero-device-mark"
+          src="/build-week/assets/her-ring.svg"
+          width="78"
+          height="78"
+          alt=""
+          aria-hidden="true"
+        />
         <div class="status">OpenAI Build Week 2026 · Candidate</div>
         <p class="wordmark" aria-hidden="true">H.E.R<sup>™</sup></p>
 
