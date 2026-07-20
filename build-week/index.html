@@ -193,12 +193,12 @@
 
     .hero-device-mark {
       position: absolute;
-      width: 78px;
-      height: 78px;
-      top: -104px;
+      width: 118px;
+      height: 118px;
+      top: -124px;
       left: 43%;
       transform: translateX(-50%);
-      opacity: 0.78;
+      opacity: 0.86;
       pointer-events: none;
       user-select: none;
     }
@@ -227,17 +227,21 @@
     }
 
     .wordmark {
-      margin: 0 0 14px;
-      font-size: clamp(68px, 9vw, 130px);
-      font-weight: 300;
-      line-height: 0.91;
-      letter-spacing: 0.20em;
+      margin: 0 0 16px;
+      font-size: clamp(72px, 9.2vw, 136px);
+      font-family: "Helvetica Neue", "Avenir Next", ui-sans-serif, system-ui, sans-serif;
+      font-weight: 200;
+      line-height: 0.88;
+      letter-spacing: 0.25em;
       white-space: nowrap;
-      text-shadow: 0 0 34px rgba(139, 211, 255, 0.38);
+      text-shadow:
+        0 0 12px rgba(194, 231, 255, 0.34),
+        0 0 38px rgba(87, 174, 255, 0.17);
     }
     .wordmark sup {
-      margin-left: 0.05em;
-      font-size: 0.22em;
+      margin-left: 0.04em;
+      font-size: 0.18em;
+      font-weight: 400;
       letter-spacing: 0;
       vertical-align: top;
     }
@@ -828,9 +832,9 @@
       .hero-device-mark {
         position: static;
         display: block;
-        width: 56px;
-        height: 56px;
-        margin: 0 auto 24px;
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 26px;
         transform: none;
       }
     }
@@ -873,8 +877,8 @@
         <img
           class="hero-device-mark"
           src="/build-week/assets/her-ring.svg"
-          width="78"
-          height="78"
+          width="118"
+          height="118"
           alt=""
           aria-hidden="true"
         />
