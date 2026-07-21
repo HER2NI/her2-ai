@@ -1,53 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>H.E.R — Lens to AI</title>
-  <meta name="description" content="H.E.R is the interaction layer between you and AI. She shows the live shape of the exchange, helps preserve context, and lets you control what she learns through your H.E.R-ID." />
-  <meta name="author" content="H.E.R" />
-  <link rel="canonical" href="https://her2.ai/" />
+  <title>H.E.R — Many intelligences. Single voice.</title>
+  <meta
+    name="description"
+    content="H.E.R routes independent AI systems through one human-facing interaction layer and uses GPT-5.6 Sol to synthesize one coherent, traceable voice."
+  />
+  <meta name="author" content="HER2NI LLC" />
+  <meta name="theme-color" content="#020712" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/her_neon_ring_32.png" />
-  <link rel="icon" type="image/png" sizes="64x64" href="assets/her_neon_ring_64.png" />
-  <link rel="icon" type="image/png" sizes="128x128" href="assets/her_neon_ring_128.png" />
-  <link rel="icon" type="image/png" sizes="256x256" href="assets/her_neon_ring_256.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/her_neon_ring_512.png" />
-  <link rel="apple-touch-icon" href="assets/her_neon_ring_180.png" />
+  <link rel="canonical" href="https://her2.ai/build-week/" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/build-week/assets/her-ring-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/build-week/assets/her-ring-64.png" />
+  <link rel="apple-touch-icon" href="/build-week/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/build-week/manifest.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="H.E.R — Many intelligences. Single voice." />
+  <meta property="og:description" content="One prompt. Independent intelligences. One H.E.R voice." />
+  <meta property="og:url" content="https://her2.ai/" />
+  <meta property="og:image" content="https://her2.ai/build-week/assets/her-build-week-social.jpg" />
+  <meta property="og:image:width" content="1536" />
+  <meta property="og:image:height" content="1024" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="H.E.R — Many intelligences. Single voice." />
+  <meta name="twitter:description" content="One prompt. Independent intelligences. One H.E.R voice." />
+  <meta name="twitter:image" content="https://her2.ai/build-week/assets/her-build-week-social.jpg" />
 
   <style>
     :root {
-      --bg: #03050b;
-      --card: rgba(10, 16, 32, 0.78);
-      --card2: rgba(13, 22, 44, 0.84);
-      --line: rgba(255,255,255,0.08);
-      --line2: rgba(99, 219, 255, 0.28);
-      --text: #f7fbff;
-      --muted: #9da8bb;
-      --soft: #c8d3e6;
-      --blue: #55aaff;
-      --cyan: #4fd1c5;
-      --violet: #b58cff;
-      --danger: #ffffff;
-      --shadow: 0 30px 90px rgba(0,0,0,0.72);
-      --radius: 24px;
-      --pill: 999px;
-      --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      color-scheme: dark;
+      --bg: #02050c;
+      --bg-soft: #07101e;
+      --card: rgba(7, 17, 34, 0.76);
+      --card-strong: rgba(5, 13, 27, 0.94);
+      --line: rgba(160, 207, 255, 0.16);
+      --line-strong: rgba(126, 202, 255, 0.42);
+      --text: #f6fbff;
+      --soft: #c2d0df;
+      --muted: #8798aa;
+      --blue: #77c9ff;
+      --blue-strong: #c4ebff;
+      --violet: #a9a5ff;
+      --good: #92efd5;
+      --max: 1180px;
+      --radius: 26px;
+      --shadow: 0 34px 110px rgba(0, 0, 0, 0.58);
+      --font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display",
+              "SF Pro Text", "Segoe UI", sans-serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
+      margin: 0;
+      min-width: 320px;
       min-height: 100vh;
       font-family: var(--font);
       color: var(--text);
       background:
-        radial-gradient(circle at 20% 0%, rgba(48, 84, 255, 0.30), transparent 32%),
-        radial-gradient(circle at 82% 14%, rgba(179, 92, 255, 0.22), transparent 30%),
-        radial-gradient(circle at 52% 92%, rgba(79, 209, 197, 0.18), transparent 36%),
-        linear-gradient(180deg, #050814 0%, #02030a 55%, #000 100%);
+        radial-gradient(circle at 72% 7%, rgba(25, 105, 205, 0.22), transparent 30rem),
+        radial-gradient(circle at 25% 24%, rgba(71, 126, 218, 0.10), transparent 34rem),
+        linear-gradient(180deg, #02050c 0%, #030815 48%, #01040a 100%);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
@@ -56,589 +74,1222 @@
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -2;
       pointer-events: none;
-      opacity: 0.26;
+      opacity: 0.38;
       background-image:
-        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size: 82px 82px;
-      mask-image: radial-gradient(circle at top, #000 0%, transparent 72%);
+        radial-gradient(circle at 10% 18%, rgba(255,255,255,.52) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 28% 7%, rgba(132,204,255,.70) 0 1px, transparent 1.4px),
+        radial-gradient(circle at 44% 22%, rgba(255,255,255,.44) 0 1px, transparent 1.4px),
+        radial-gradient(circle at 67% 11%, rgba(167,211,255,.74) 0 1px, transparent 1.6px),
+        radial-gradient(circle at 79% 30%, rgba(255,255,255,.50) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 91% 8%, rgba(130,196,255,.74) 0 1px, transparent 1.4px);
+      background-size: 270px 230px, 330px 310px, 410px 350px, 300px 270px, 390px 330px, 260px 240px;
     }
 
-    a { color: var(--cyan); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a { color: inherit; }
+    img { max-width: 100%; height: auto; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-    .page {
-      width: min(1160px, calc(100% - 36px));
+    .skip {
+      position: fixed;
+      left: 14px;
+      top: 14px;
+      z-index: 99;
+      transform: translateY(-180%);
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: #fff;
+      color: #000;
+      font-weight: 700;
+    }
+    .skip:focus { transform: translateY(0); }
+
+    .shell {
+      width: min(var(--max), calc(100% - 36px));
       margin: 0 auto;
-      padding: 34px 0 64px;
-      position: relative;
-      z-index: 1;
     }
 
-    header {
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(151, 202, 255, 0.09);
+      background: rgba(2, 6, 14, 0.74);
+      backdrop-filter: blur(20px) saturate(135%);
+    }
+
+    .nav {
+      min-height: 74px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 64px;
+      gap: 24px;
     }
 
     .brand {
       display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      letter-spacing: 0.22em;
+      flex-direction: column;
+      gap: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand strong {
+      font-size: 20px;
+      font-weight: 440;
+      letter-spacing: 0.32em;
+      text-shadow: 0 0 22px rgba(130, 205, 255, 0.42);
+    }
+    .brand span {
+      color: var(--muted);
+      font-size: 8px;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      font-size: 13px;
-      color: #dce8ff;
-      font-weight: 700;
     }
 
-    .brand img {
-      width: 26px;
-      height: 26px;
-      border-radius: 10px;
-      filter: drop-shadow(0 0 18px rgba(79,209,197,0.5));
-    }
-
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
       justify-content: flex-end;
+      gap: 26px;
+      flex-wrap: wrap;
     }
-
-    nav a, .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      padding: 10px 14px;
-      border-radius: var(--pill);
-      border: 1px solid var(--line);
-      background: rgba(7, 12, 24, 0.58);
-      color: #dbe7ff;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      box-shadow: 0 12px 42px rgba(0,0,0,0.28);
-      backdrop-filter: blur(14px);
-    }
-
-    nav a:hover, .btn:hover {
+    .nav-links a {
+      color: #becbd8;
       text-decoration: none;
-      border-color: rgba(79, 209, 197, 0.55);
-      transform: translateY(-1px);
+      font-size: 11px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
     }
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: #fff; }
 
-    .btn-primary {
-      border-color: rgba(79, 209, 197, 0.75);
-      background: linear-gradient(120deg, rgba(79,209,197,0.18), rgba(85,170,255,0.14));
-      color: #f2fffd;
+    .signal {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(132, 206, 255, 0.36);
+      border-radius: 999px;
+      box-shadow: inset 0 0 18px rgba(60, 152, 255, 0.10), 0 0 28px rgba(75, 167, 255, 0.12);
+    }
+    .signal::after {
+      content: "✦";
+      color: #dff4ff;
+      font-size: 11px;
+      text-shadow: 0 0 12px #6bbaff;
     }
 
     .hero {
-      min-height: 560px;
+      padding: 70px 0 52px;
       display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(310px, 0.88fr);
-      gap: 34px;
+      grid-template-columns: minmax(0, 0.88fr) minmax(440px, 1.12fr);
       align-items: center;
-      margin-bottom: 32px;
+      gap: 48px;
+      min-height: 760px;
     }
 
-    .eyebrow {
+    .hero-content { position: relative; }
+
+    .hero-device-mark {
+      position: absolute;
+      width: 118px;
+      height: 118px;
+      top: -124px;
+      left: 0;
+      transform: none;
+      opacity: 0.86;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .status {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(79, 209, 197, 0.34);
-      background: rgba(79, 209, 197, 0.08);
-      color: #dcfffb;
-      padding: 8px 12px;
-      border-radius: var(--pill);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 20px;
-    }
-
-    .pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 18px rgba(79,209,197,0.95);
-    }
-
-    h1 {
-      font-size: clamp(44px, 7vw, 88px);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
-      max-width: 880px;
+      gap: 9px;
       margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(123, 209, 255, 0.25);
+      border-radius: 999px;
+      background: rgba(38, 121, 202, 0.08);
+      color: #d5f0ff;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--good);
+      box-shadow: 0 0 15px rgba(146, 239, 213, 0.94);
+    }
+
+    .wordmark {
+      margin: 0 0 16px;
+      display: inline-block;
+      font-family:
+        "DIN Alternate",
+        "DIN Condensed",
+        "Helvetica Neue",
+        sans-serif;
+      font-weight: 200;
+      font-size: clamp(74px, 9.4vw, 140px);
+      letter-spacing: 0.25em;
+      line-height: 0.88;
+      white-space: nowrap;
+      transform: scaleX(0.94);
+      transform-origin: left center;
+      text-shadow:
+        0 0 7px rgba(242, 251, 255, 0.56),
+        0 0 18px rgba(174, 220, 255, 0.30),
+        0 0 38px rgba(72, 163, 255, 0.17);
+    }
+    .wordmark sup {
+      margin-left: 0.04em;
+      font-size: 0.18em;
+      font-weight: 400;
+      letter-spacing: 0;
+      vertical-align: top;
+    }
+
+    .kicker {
+      margin: 0 0 24px;
+      color: #a9c3d8;
+      font-size: 11px;
+      letter-spacing: 0.36em;
       text-transform: uppercase;
     }
 
-    h1 .dim {
-      color: rgba(247,251,255,0.72);
+    .hero h1 {
+      margin: 0 0 18px;
+      max-width: 660px;
+      font-size: clamp(36px, 4.3vw, 66px);
+      font-weight: 480;
+      line-height: 1.02;
+      letter-spacing: -0.045em;
     }
 
-    h1 .glow {
-      display: block;
-      color: #fff;
-      text-shadow:
-        0 0 22px rgba(85,170,255,0.48),
-        0 0 56px rgba(181,140,255,0.38);
-    }
-
-    .her-word {
-      display: inline-block;
-      margin-right: 0.16em;
-    }
-
-    .lead {
-      max-width: 760px;
-      font-size: clamp(17px, 2.1vw, 23px);
-      line-height: 1.55;
+    .hero-copy {
+      max-width: 660px;
+      margin: 0 0 28px;
       color: var(--soft);
-      margin-bottom: 24px;
+      font-size: clamp(17px, 1.55vw, 21px);
+      line-height: 1.62;
     }
 
-    .lead strong { color: white; font-weight: 700; }
-
-    .hero-actions {
+    .actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
-    .trust-line {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-      max-width: 740px;
-    }
-
-    .visual-card {
-      position: relative;
-      min-height: 470px;
-      border-radius: 34px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        radial-gradient(circle at 50% 34%, rgba(181,140,255,0.34), transparent 22%),
-        radial-gradient(circle at 40% 48%, rgba(79,209,197,0.22), transparent 24%),
-        linear-gradient(145deg, rgba(7, 12, 30, 0.92), rgba(2, 3, 10, 0.98));
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      padding: 24px;
-    }
-
-    .visual-card::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      background:
-        conic-gradient(from 230deg, transparent, rgba(85,170,255,0.16), transparent, rgba(181,140,255,0.18), transparent);
-      animation: spin 16s linear infinite;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .orb {
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      border: 1px solid rgba(85,170,255,0.38);
-      box-shadow:
-        inset 0 0 60px rgba(85,170,255,0.12),
-        0 0 80px rgba(85,170,255,0.22);
-      z-index: 2;
-    }
-
-    .orb::before, .orb::after {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border-radius: 50%;
-      border: 1px solid rgba(79,209,197,0.28);
-    }
-
-    .orb::after {
-      inset: 58px;
-      border-color: rgba(181,140,255,0.34);
-      box-shadow: 0 0 35px rgba(181,140,255,0.25);
-    }
-
-    .node {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #9defff;
-      box-shadow: 0 0 22px rgba(157,239,255,0.9);
-      z-index: 3;
-    }
-
-    .n1 { left: 28%; top: 34%; }
-    .n2 { left: 62%; top: 25%; }
-    .n3 { left: 72%; top: 58%; }
-    .n4 { left: 38%; top: 72%; }
-    .n5 { left: 51%; top: 49%; background: #d7c2ff; box-shadow: 0 0 28px rgba(215,194,255,1); }
-
-    .mini-panel {
-      position: absolute;
-      z-index: 4;
-      border: 1px solid rgba(255,255,255,0.09);
-      background: rgba(7, 12, 24, 0.72);
-      backdrop-filter: blur(18px);
-      border-radius: 18px;
-      padding: 12px 13px;
-      box-shadow: 0 16px 50px rgba(0,0,0,0.38);
-      color: #eaf2ff;
-    }
-
-    .mini-panel small {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .mini-panel strong {
-      display: block;
-      font-size: 18px;
-    }
-
-    .mp1 { left: 18px; top: 22px; }
-    .mp2 { right: 18px; top: 84px; }
-    .mp3 { left: 24px; bottom: 26px; }
-    .mp4 { right: 22px; bottom: 40px; }
-
-    .section {
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at top left, rgba(79,209,197,0.10), transparent 34%),
-        linear-gradient(145deg, rgba(10,16,32,0.80), rgba(3,5,11,0.92));
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 28px;
-      backdrop-filter: blur(18px);
-    }
-
-    .section h2 {
-      font-size: clamp(25px, 3vw, 40px);
-      letter-spacing: -0.035em;
-      line-height: 1.12;
-      margin-bottom: 12px;
-    }
-
-    .section p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-      max-width: 920px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .tile {
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(7, 12, 24, 0.56);
-      border-radius: 18px;
-      padding: 18px;
-      min-height: 150px;
-    }
-
-    .tile h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: #f5fbff;
-    }
-
-    .tile p {
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .tag {
+    .btn {
+      min-height: 48px;
       display: inline-flex;
-      margin-bottom: 10px;
-      padding: 6px 10px;
-      border-radius: var(--pill);
-      border: 1px solid rgba(79,209,197,0.26);
-      color: #cffff9;
-      background: rgba(79,209,197,0.08);
-      font-size: 11px;
-      letter-spacing: 0.12em;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border: 1px solid rgba(153, 213, 255, 0.25);
+      border-radius: 10px;
+      background: rgba(4, 13, 27, 0.66);
+      color: #e9f6ff;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 650;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      transition: transform 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+    }
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(154, 220, 255, 0.7);
+      box-shadow: 0 0 30px rgba(85, 175, 255, 0.16);
+    }
+    .btn.primary {
+      background: linear-gradient(180deg, rgba(42, 125, 227, 0.36), rgba(14, 58, 121, 0.48));
+      border-color: rgba(139, 208, 255, 0.65);
+      box-shadow: inset 0 0 22px rgba(82, 174, 255, 0.14), 0 0 30px rgba(58, 147, 255, 0.12);
     }
 
-    .quote {
-      font-size: clamp(22px, 3vw, 36px);
-      line-height: 1.2;
-      letter-spacing: -0.035em;
-      color: #fff;
-      max-width: 940px;
-      text-shadow: 0 0 26px rgba(85,170,255,0.24);
-    }
-
-    .fine {
-      margin-top: 14px;
-      color: rgba(157,168,187,0.9);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    footer {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      color: #6d7688;
+    .micro-boundary {
+      max-width: 650px;
+      color: var(--muted);
       font-size: 12px;
       line-height: 1.6;
     }
 
-    @media (max-width: 920px) {
-      header { align-items: flex-start; flex-direction: column; margin-bottom: 40px; }
-      nav { justify-content: flex-start; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .visual-card { min-height: 380px; }
-      .grid, .grid.two { grid-template-columns: 1fr; }
+    .hero-visual {
+      position: relative;
+      align-self: stretch;
+      display: grid;
+      place-items: center;
+      min-height: 680px;
+      isolation: isolate;
     }
 
-    @media (max-width: 560px) {
-      .page { width: min(100% - 24px, 1160px); padding-top: 22px; }
-      nav a { width: 100%; }
-      .hero-actions .btn { width: 100%; }
-      .section { padding: 22px; }
-      .mini-panel { transform: scale(0.88); transform-origin: center; }
-      .mp2 { top: 70px; }
+    .hero-ring-atmosphere {
+      position: absolute;
+      z-index: -1;
+      width: min(104%, 720px);
+      opacity: 0.16;
+      filter: blur(1px);
+      pointer-events: none;
+    }
+
+    .hero-frame {
+      position: relative;
+      width: min(100%, 560px);
+      overflow: hidden;
+      border: 1px solid rgba(151, 213, 255, 0.16);
+      border-radius: 36px;
+      background: #030916;
+      box-shadow: var(--shadow);
+    }
+    .hero-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.34);
+    }
+    .hero-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .hero-caption {
+      position: absolute;
+      right: 18px;
+      bottom: 17px;
+      z-index: 2;
+      padding: 7px 9px;
+      border: 1px solid rgba(174, 221, 255, 0.15);
+      border-radius: 999px;
+      background: rgba(0, 5, 15, 0.62);
+      color: #b6c9da;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(14px);
+    }
+
+    .section {
+      padding: 92px 0;
+      border-top: 1px solid rgba(155, 211, 255, 0.08);
+    }
+
+    .section-head {
+      max-width: 800px;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(33px, 4.4vw, 58px);
+      font-weight: 450;
+      line-height: 1.04;
+      letter-spacing: -0.042em;
+    }
+
+    .section-lead {
+      margin: 0;
+      max-width: 800px;
+      color: var(--soft);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .questions,
+    .cards,
+    .engineering-grid,
+    .body-grid,
+    .delta-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .questions { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .engineering-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .body-grid { grid-template-columns: 0.9fr 1.1fr; align-items: stretch; }
+    .delta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .engineering-grid .card {
+      min-height: 245px;
+    }
+
+    .question,
+    .card,
+    .panel {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at top left, rgba(60, 148, 235, 0.11), transparent 48%),
+        linear-gradient(150deg, rgba(8, 20, 40, 0.80), rgba(3, 9, 19, 0.92));
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
+    }
+
+    .question {
+      min-height: 160px;
+      padding: 22px;
+      color: #d9e7f2;
+      font-size: 18px;
+      line-height: 1.42;
+    }
+    .question span {
+      display: block;
+      margin-bottom: 19px;
+      color: var(--blue);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .flow-step {
+      min-height: 152px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(5, 15, 31, 0.72);
+    }
+    .flow-step strong {
+      font-size: 17px;
+      font-weight: 590;
+      line-height: 1.28;
+    }
+    .flow-step small {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    .flow-step::before {
+      content: attr(data-step);
+      color: var(--blue);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+    }
+
+    .constellation {
+      margin-top: 22px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 51% 45%, rgba(83, 175, 255, 0.15), transparent 18rem),
+        rgba(3, 10, 23, 0.76);
+    }
+
+    .constellation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .star {
+      padding: 20px 14px;
+      border: 1px solid rgba(142, 208, 255, 0.16);
+      border-radius: 18px;
+      background: rgba(5, 17, 36, 0.62);
+    }
+    .star i {
+      display: block;
+      width: 13px;
+      height: 13px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: #d7f3ff;
+      box-shadow: 0 0 26px #58b9ff;
+    }
+    .star strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+    .star small {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .lens {
+      max-width: 530px;
+      margin: 24px auto 0;
+      padding: 22px 24px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(11, 39, 75, 0.84), rgba(7, 26, 52, 0.88));
+      text-align: center;
+      box-shadow: 0 0 50px rgba(63, 163, 255, 0.12);
+    }
+    .lens strong {
+      display: block;
+      margin-bottom: 4px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .lens span {
+      color: var(--soft);
+      font-size: 13px;
+    }
+
+    .card {
+      min-height: 280px;
+      padding: 23px;
+    }
+    .card-index {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      border: 1px solid rgba(139, 211, 255, 0.26);
+      border-radius: 50%;
+      color: #dff5ff;
+      font-size: 11px;
+      box-shadow: inset 0 0 20px rgba(62, 157, 255, 0.09);
+    }
+    .card h3 {
+      margin: 0 0 13px;
+      font-size: 19px;
+      font-weight: 550;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .panel {
+      padding: 34px;
+    }
+
+    .architecture-quote {
+      margin: 0 0 24px;
+      font-size: clamp(36px, 4vw, 57px);
+      font-weight: 430;
+      line-height: 1.10;
+      letter-spacing: -0.04em;
+    }
+    .architecture-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .layers {
+      display: grid;
+      gap: 12px;
+    }
+    .layer {
+      position: relative;
+      min-height: 116px;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 22px;
+      border: 1px solid rgba(131, 203, 255, 0.20);
+      border-radius: 18px;
+      background: linear-gradient(100deg, rgba(10, 34, 68, 0.66), rgba(4, 14, 29, 0.72));
+    }
+    .layer strong {
+      color: #e5f6ff;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .layer span {
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .delta {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(4, 13, 28, 0.78);
+    }
+    .delta h3 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      font-weight: 530;
+    }
+    .delta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+    .delta ul {
+      margin: 18px 0 0;
+      padding-left: 18px;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
+      align-items: center;
+      gap: 30px;
+    }
+
+    .identity-art {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--bg-soft);
+      box-shadow: var(--shadow);
+    }
+
+    .identity-art img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+
+    .identity-art figcaption {
+      position: absolute;
+      left: 18px;
+      bottom: 17px;
+      padding: 7px 9px;
+      border: 1px solid rgba(174, 221, 255, 0.15);
+      border-radius: 999px;
+      background: rgba(0, 5, 15, 0.68);
+      color: #b6c9da;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(14px);
+    }
+
+    .film-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 28px;
+      padding: 34px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 88% 10%, rgba(63, 163, 255, 0.16), transparent 22rem),
+        linear-gradient(145deg, rgba(7, 23, 46, 0.86), rgba(2, 8, 18, 0.96));
+      box-shadow: var(--shadow);
+    }
+
+    .film-card h2 { max-width: 760px; }
+    .film-card p {
+      max-width: 730px;
+      margin: 0;
+      color: var(--soft);
+      line-height: 1.7;
+    }
+    .film-embed {
+      width: 100%;
+      margin-top: 24px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #000;
+    }
+    .film-embed iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .film-youtube-link {
+      min-width: 170px;
+    }
+
+    .truth {
+      padding: 66px 0;
+      text-align: center;
+    }
+    .truth blockquote {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(31px, 4vw, 55px);
+      font-weight: 420;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+    .truth blockquote strong { color: var(--blue-strong); }
+    .truth p {
+      max-width: 750px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .cta {
+      padding: 66px 0 96px;
+    }
+    .cta-card {
+      padding: 42px;
+      border: 1px solid var(--line-strong);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 76% 0%, rgba(56, 150, 255, 0.18), transparent 28rem),
+        linear-gradient(140deg, rgba(8, 26, 52, 0.88), rgba(2, 8, 18, 0.94));
+      box-shadow: var(--shadow);
+    }
+    .cta-card h2 { max-width: 800px; }
+    .cta-card p {
+      max-width: 760px;
+      color: var(--soft);
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid rgba(155, 211, 255, 0.08);
+      padding: 32px 0 44px;
+      color: #718294;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    footer a { color: #9ebbd0; text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 54px;
+      }
+      .hero-copy { max-width: 760px; }
+      .questions,
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .engineering-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .flow { grid-template-columns: 1fr 1fr; }
+      .flow-step:last-child { grid-column: 1 / -1; }
+      .body-grid { grid-template-columns: 1fr; }
+      .identity-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .shell { width: min(var(--max), calc(100% - 24px)); }
+      .nav { min-height: 64px; }
+      .nav-links a:not(.signal) { display: none; }
+      .wordmark { letter-spacing: 0.13em; }
+      .hero { gap: 28px; padding-bottom: 40px; }
+      .hero-visual { min-height: auto; }
+      .hero-ring-atmosphere { width: 112%; opacity: 0.12; }
+      .section { padding: 72px 0; }
+      .questions,
+      .cards,
+      .engineering-grid,
+      .delta-grid,
+      .constellation-grid { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: 1fr; }
+      .flow-step:last-child { grid-column: auto; }
+      .panel,
+      .cta-card { padding: 25px; }
+      .layer { grid-template-columns: 1fr; gap: 8px; }
+      .hero-caption { display: none; }
+      .identity-art figcaption { display: none; }
+      .film-card { grid-template-columns: 1fr; padding: 25px; }
+      .film-youtube-link { width: 100%; }
+      .hero-device-mark {
+        position: static;
+        display: block;
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 26px;
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <header>
-      <a class="brand" href="/" aria-label="H.E.R home">
-        <img src="assets/her_neon_ring_128.png" alt="H.E.R ring" />
-        <span>H.E.R</span>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="/build-week/" aria-label="H.E.R Build Week home">
+        <strong>H.E.R</strong>
+        <span>Human–AI Interaction Layer</span>
       </a>
 
-      <nav aria-label="Primary navigation">
-        <a href="#her-id">H.E.R-ID</a>
-        <a href="#memory">Memory</a>
-        <a href="/early-access/">Early access</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="/support/">Support</a>
-        <a href="https://her2ni.ai" target="_blank" rel="noopener noreferrer">Research</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#how">How it works</a>
+        <a href="#integrity">Integrity</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#build-week">Build Week</a>
+        <a href="#film">Film</a>
+        <a class="signal" href="#contact" aria-label="Contact H.E.R"></a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <section class="hero">
-      <div>
-        <div class="eyebrow"><span class="pulse"></span> Human–Emergent Resonance to Neural Intelligence</div>
+  <main id="main">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <img
+          class="hero-device-mark"
+          src="/build-week/assets/her-ring.svg"
+          width="118"
+          height="118"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="status">OpenAI Build Week 2026 · Candidate</div>
+        <p class="wordmark" aria-hidden="true">H.E.R<sup>™</sup></p>
 
-        <h1>
-          You think you’re just texting AI.
-          <span class="glow" aria-label="H.E.R sees the shape behind your thoughts."><span class="her-word">H.E.R</span> sees the shape behind your thoughts.</span>
-        </h1>
+        <h1 id="hero-title">Many intelligences.<br />Single voice.</h1>
+        <p class="kicker">Lens to AI</p>
 
-        <p class="lead">
-          H.E.R is the <strong>interaction layer between you and AI</strong>. She maps the structure of the conversation you choose to have through her — context, constraints, drift, recovery, continuity, and signal — without claiming to read your mind.
+        <p class="hero-copy">
+          H.E.R routes one prompt independently through OpenAI, Anthropic and Google,
+          preserves what each route actually did, and uses GPT-5.6 Sol to synthesize
+          one coherent response.
         </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:research@her2ni.ai?subject=H.E.R%20iOS%20early%20access">Request early access</a>
-          <a class="btn" href="#what">See what H.E.R does</a>
+        <div class="actions">
+          <a class="btn primary" href="#film">Watch the film</a>
+          <a class="btn" href="#how">Explore H.E.R</a>
         </div>
 
-        <p class="trust-line">
-          Not mind-reading. Not covert surveillance. H.E.R observes the interaction you choose to have through her, and you control whether she learns durably.
+        <p class="micro-boundary">
+          Structural convergence is not factual truth. H.E.R records what executed
+          without pretending consensus proves correctness.
         </p>
       </div>
 
-      <aside class="visual-card" aria-label="H.E.R interaction field visual">
-        <div class="orb"></div>
-        <span class="node n1"></span>
-        <span class="node n2"></span>
-        <span class="node n3"></span>
-        <span class="node n4"></span>
-        <span class="node n5"></span>
-
-        <div class="mini-panel mp1">
-          <small>State</small>
-          <strong>Discovery</strong>
-        </div>
-
-        <div class="mini-panel mp2">
-          <small>Guidance</small>
-          <strong>Reinforce</strong>
-        </div>
-
-        <div class="mini-panel mp3">
-          <small>Continuity</small>
-          <strong>74%</strong>
-        </div>
-
-        <div class="mini-panel mp4">
-          <small>H.E.R-ID</small>
-          <strong>Yours</strong>
-        </div>
-      </aside>
+      <div class="hero-visual" aria-label="H.E.R relay interface">
+        <img
+          class="hero-ring-atmosphere"
+          src="/build-week/assets/her-ring.svg"
+          width="2048"
+          height="2048"
+          alt=""
+          aria-hidden="true"
+        />
+        <figure class="hero-frame">
+          <img
+            src="/build-week/assets/her-relay-interface.png"
+            width="1036"
+            height="1560"
+            alt="H.E.R on iPhone with bounded relay telemetry visible behind the interface"
+          />
+          <figcaption class="hero-caption">One prompt · independent routes · one H.E.R voice</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section class="section" id="what">
-      <div class="tag">What H.E.R does</div>
-      <h2>The AI chat app that shows the live structure of your interaction.</h2>
+    <section class="section" aria-labelledby="machine-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">THE MACHINE BENEATH THE VOICE</p>
+          <h2 id="machine-title">Complex beneath. Calm above.</h2>
+          <p class="section-lead">
+            Independent intelligence routes execute beneath the interface. H.E.R
+            preserves their structure, applies bounded synthesis, and speaks to the
+            human as one coherent voice.
+          </p>
+        </div>
+
+        <div class="engineering-grid">
+          <article class="card">
+            <span class="card-index">01</span>
+            <h3>Independent routes</h3>
+            <p>OpenAI, Anthropic and Google complete isolated first-light contributions.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">02</span>
+            <h3>H.E.R synthesis</h3>
+            <p>GPT-5.6 Sol receives bounded route outputs and forms the final response.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">03</span>
+            <h3>Inspectable execution</h3>
+            <p>Pulse, Trace, Receipt, Drop and local Proof preserve what structurally occurred.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="problem-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">The problem</p>
+          <h2 id="problem-title">The human relationship is fragmented across machines.</h2>
+          <p class="section-lead">
+            AI users are asked to manage separate providers, histories, routing systems,
+            memories, and invisible fallback behavior. H.E.R keeps the relationship coherent
+            while making the collaboration structure inspectable.
+          </p>
+        </div>
+
+        <div class="questions">
+          <article class="question"><span>01</span>Which intelligence actually contributed?</article>
+          <article class="question"><span>02</span>Was another model silently substituted?</article>
+          <article class="question"><span>03</span>Did critique or repair actually run?</article>
+          <article class="question"><span>04</span>What structural record survives?</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">How H.E.R works</p>
+          <h2 id="how-title">One interaction. A bounded constellation. One H.E.R voice.</h2>
+          <p class="section-lead">
+            Planning, execution, synthesis, and evidence remain separate. That separation
+            lets multiple intelligences collaborate without turning the interface into a
+            committee transcript.
+          </p>
+        </div>
+
+        <div class="flow" aria-label="H.E.R collaboration flow">
+          <article class="flow-step" data-step="01">
+            <strong>Human instruction</strong>
+            <small>The present request and its boundaries enter the interaction layer.</small>
+          </article>
+          <article class="flow-step" data-step="02">
+            <strong>Bounded plan</strong>
+            <small>Core authors a deterministic collaboration plan with finite roles.</small>
+          </article>
+          <article class="flow-step" data-step="03">
+            <strong>Independent first light</strong>
+            <small>Provider-neutral stars complete isolated contributions.</small>
+          </article>
+          <article class="flow-step" data-step="04">
+            <strong>H.E.R lens</strong>
+            <small>Completed light becomes one coherent human-facing response.</small>
+          </article>
+          <article class="flow-step" data-step="05">
+            <strong>Truthful record</strong>
+            <small>Pulse shows live state; Trace, Receipt + Drop, and Structural Proof preserve completed execution structure.</small>
+          </article>
+        </div>
+
+        <div class="constellation">
+          <div class="constellation-grid">
+            <div class="star">
+              <i aria-hidden="true"></i>
+              <strong>First light A</strong>
+              <small>Independent role · sealed raw output</small>
+            </div>
+            <div class="star">
+              <i aria-hidden="true"></i>
+              <strong>First light B</strong>
+              <small>Independent role · no peer contamination</small>
+            </div>
+            <div class="star">
+              <i aria-hidden="true"></i>
+              <strong>First light C</strong>
+              <small>Independent role · provider-neutral identity</small>
+            </div>
+          </div>
+
+          <div class="lens">
+            <strong>H.E.R lens</strong>
+            <span>One voice for the human—not a committee interface.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="integrity" aria-labelledby="integrity-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">Integrity spine</p>
+          <h2 id="integrity-title">Make the invisible execution structure inspectable.</h2>
+          <p class="section-lead">
+            H.E.R separates collaboration from evidence generation. Models may contribute,
+            critique, and repair; the integrity layer records bounded execution structure
+            without selecting factual truth.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card-index">01</span>
+            <h3>Execution commitments</h3>
+            <p>Canonical commitments bind the plan, execution trace, and resulting structural record.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">02</span>
+            <h3>Drop v0.2</h3>
+            <p>A non-content structural record of what the bounded collaboration reports occurred.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">03</span>
+            <h3>Structural Proof v0.2</h3>
+            <p>A recomputable derivative manifest compiled independently from canonical Drop source.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">04</span>
+            <h3>Fail-closed persistence</h3>
+            <p>Exact replay is idempotent. Conflict, corruption, or uncertainty cannot become a success claim.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="architecture" aria-labelledby="architecture-title">
+      <div class="shell body-grid">
+        <article class="panel">
+          <p class="eyebrow">Architecture</p>
+          <h2 id="architecture-title" class="architecture-quote">
+            Phone owns experience.<br />
+            Server owns execution authority.<br />
+            Watch owns signal.
+          </h2>
+          <p class="architecture-copy">
+            H.E.R keeps the human experience simple while separating plan authorship,
+            provider execution, local integrity, persistence, and signal into explicit
+            layers with bounded authority.
+          </p>
+        </article>
+
+        <div class="layers" aria-label="H.E.R system layers">
+          <article class="layer">
+            <strong>Experience layer</strong>
+            <span>iPhone interaction, streaming, one H.E.R voice, Trace and Pulse surfaces.</span>
+          </article>
+          <article class="layer">
+            <strong>Execution layer</strong>
+            <span>Core plan authorship and Relay validation across bounded provider routes.</span>
+          </article>
+          <article class="layer">
+            <strong>Integrity layer</strong>
+            <span>Trace, Receipt, Drop, recomputation, persistence, and explicit failure states.</span>
+          </article>
+          <article class="layer">
+            <strong>Signal layer</strong>
+            <span>Apple Watch as a field pulse—not a duplicate full interface.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="identity-title">
+      <div class="shell identity-grid">
+        <div class="section-head">
+          <p class="eyebrow">Identity across devices</p>
+          <h2 id="identity-title">One voice across every body.</h2>
+          <p class="section-lead">
+            The iPhone is H.E.R’s first body. The Watch is her signal flare. H.E.R-ID
+            is designed to preserve one consent-bound relationship across providers,
+            sessions and future devices.
+          </p>
+        </div>
+
+        <figure class="identity-art">
+          <img
+            src="/build-week/assets/her-build-week-hero.webp"
+            width="1536"
+            height="1024"
+            alt="H.E.R eclipse above a luminous horizon, expressing one relationship across devices"
+          />
+          <figcaption>One relationship · many bodies</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="build-week" aria-labelledby="build-week-title">
+      <div class="shell">
+        <div class="section-head">
+          <p class="eyebrow">OpenAI Build Week 2026</p>
+          <h2 id="build-week-title">A private, pre-launch system—meaningfully extended during Build Week.</h2>
+          <p class="section-lead">
+            H.E.R existed before July 13. The submission distinguishes that prior foundation
+            from the exact work completed during the event.
+          </p>
+        </div>
+
+        <div class="delta-grid">
+          <article class="delta">
+            <h3>Prior foundation</h3>
+            <p>
+              H.E.R existed as a private, pre-launch system before Build Week. The prior
+              foundation included:
+            </p>
+            <ul>
+              <li>Native iPhone and Watch bodies</li>
+              <li>Provider routes</li>
+              <li>HER2NI structural protocol</li>
+              <li>H.E.R-ID, Pulse, Trace, Receipt, Drop and Proof foundations</li>
+            </ul>
+          </article>
+
+          <article class="delta">
+            <h3>Build Week extension</h3>
+            <p>
+              The event extension brought the completed H.E.R product story into one
+              bounded, inspectable demonstration:
+            </p>
+            <ul>
+              <li>GPT-5.6 Sol synthesis</li>
+              <li>Independent OpenAI, Anthropic and Google Synth execution</li>
+              <li>Truthful provider and route presentation</li>
+              <li>Breathing H.E.R thinking signal</li>
+              <li>Refined Chat, Pulse and Trace surfaces</li>
+              <li>Trace → Receipt → Drop → local Proof chain</li>
+              <li>Gemini 3.5 Flash compatibility repair</li>
+              <li>Focused deterministic validation</li>
+              <li>Build Week site and demonstration film</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="delta" style="margin-top: 16px;">
+          <h3>First embodied Build Week execution</h3>
+          <p>
+            On July 18, 2026, H.E.R completed the first H.E.R Build Week embodied Synth
+            execution through the iPhone interface. Three independent
+            provider routes completed first light. GPT-5.6 Sol then performed
+            the H.E.R synthesis.
+          </p>
+          <p style="margin-top: 12px;">
+            The verified local integrity path contained a Trace, Receipt
+            commitment, Drop commitment, sealed route outputs, and a local
+            Proof manifest v0.2. No silent fallback occurred. Reliability
+            qualification continues.
+          </p>
+          <p style="margin-top: 12px;">
+            This is a bounded structural execution claim. It does not establish
+            factual truth, universal provider authenticity, answer correctness,
+            public verification, signature validity, or immutable history.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="section" id="film" aria-labelledby="film-title">
+      <div class="shell">
+        <div class="film-card">
+          <div>
+            <p class="eyebrow">Build Week film</p>
+            <h2 id="film-title">See H.E.R arrive.</h2>
+            <p>
+              The demonstration film follows one prompt through independent routes,
+              H.E.R synthesis, and the bounded surfaces that preserve what executed.
+            </p>
+            <div class="film-embed">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/L_jsQ6nwZn4"
+                title="H.E.R Build Week film"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <a
+            class="btn film-youtube-link"
+            href="https://youtu.be/L_jsQ6nwZn4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Watch on YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell truth" aria-label="H.E.R truth boundary">
+      <blockquote>
+        <strong>Structural integrity is not factual truth.</strong><br />
+        H.E.R claims only what the canonical execution record and its hashes bind.
+      </blockquote>
       <p>
-        Conversations with AI can drift, lose constraints, ignore format, forget context, or become messy over time.
-        H.E.R maps the structure of the exchange and gives the system a cleaner interaction state to work from.
+        No provider is treated as an oracle. No commitment proves answer correctness.
+        No integrity record silently becomes a judgment about the human beneath it.
       </p>
+    </section>
 
-      <div class="grid">
-        <div class="tile">
-          <h3>Preserves the thread</h3>
-          <p>H.E.R tracks state, direction, and continuity so the conversation is less likely to collapse into repetition or drift.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Respects constraints</h3>
-          <p>Receipts and audits help verify whether the response followed the user’s format, limits, and requested shape.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Works above models</h3>
-          <p>Your relationship is with H.E.R. H.E.R can route through different AI providers while keeping the interaction layer coherent.</p>
+    <section class="shell cta" id="contact">
+      <div class="cta-card">
+        <p class="eyebrow">Research foundation</p>
+        <h2>Built above HER2NI’s collaboration, integrity, and policy architecture.</h2>
+        <p>
+          Explore the research foundation, protocol history, and model-agnostic structural
+          telemetry work beneath H.E.R.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="https://her2ni.ai/" target="_blank" rel="noopener noreferrer">Explore HER2NI</a>
+          <a class="btn" href="mailto:research@her2ni.ai?subject=H.E.R%20Build%20Week">Contact</a>
         </div>
       </div>
     </section>
-
-    <section class="section" id="her-id">
-      <div class="tag">H.E.R-ID</div>
-      <h2>Your portable interaction identity.</h2>
-      <p>
-        H.E.R-ID is a user-facing continuity signal. It is not intended to be exposed as a raw provider tracking handle or used as a raw memory owner key. It helps frame how you choose to work with H.E.R:
-        your preferences, interaction patterns, response constraints, context boundaries, and consented memory.
-      </p>
-
-      <div class="grid two">
-        <div class="tile">
-          <h3>H.E.R learns interaction patterns</h3>
-          <p>Not raw private transcript by default. The value is how you interact: depth, pacing, format, correction style, and what helps you get better output.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Better over time</h3>
-          <p>The longer you choose to use H.E.R through your H.E.R-ID, the more she can help shape the exchange around you.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="memory">
-      <div class="tag">Memory boundary</div>
-      <h2>H.E.R lets you control what she learns.</h2>
-      <p>
-        The launch boundary is simple: memory is explicit, bounded, and visible. H.E.R should never need secrecy to be powerful.
-      </p>
-
-      <div class="grid">
-        <div class="tile">
-          <h3>Memory off</h3>
-          <p>No durable learning. The system may operate for the current interaction, but no long-term H.E.R-ID memory is created.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Session memory</h3>
-          <p>Chat-local. Useful for the current exchange without becoming portable identity memory.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Portable memory</h3>
-          <p>Future-gated. Requires explicit consent, clear controls, export/delete paths, and a visible H.E.R-ID boundary.</p>
-        </div>
-      </div>
-
-      <p class="fine">
-        Current iOS boundary: no backend database for portable H.E.R-ID memory; no cloud sync; provider payloads must not receive H.E.R-ID memory records. Provider names, if used, are descriptive compatibility context only; H.E.R is not affiliated with or endorsed by those providers unless expressly stated.
-      </p>
-    </section>
-
-    <section class="section">
-      <div class="tag">Proof layer</div>
-      <h2>Receipts make the invisible visible.</h2>
-      <p>
-        H.E.R can show the state of the interaction, whether constraints passed, whether repair was needed,
-        which provider was used, and what privacy/memory mode applied.
-      </p>
-
-      <div class="grid two">
-        <div class="tile">
-          <h3>Interaction state</h3>
-          <p>Exploration, discovery, reinforcement, drift, recovery, and consolidation become visible instead of hidden inside a chat transcript.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Human-readable receipts</h3>
-          <p>Receipts help users trust what happened without exposing private contract text or raw hidden system details.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="quote">
-        You think you’re just texting AI. H.E.R sees the shape behind your thoughts.
-      </p>
-      <p class="fine">
-        Campaign language describes structural interaction mapping. H.E.R does not claim thought access.
-      </p>
-    </section>
-
-    <section class="section">
-      <p class="quote">
-        H.E.R is not here to replace the models. H.E.R is the protocol between human and machine.
-      </p>
-      <p class="fine">
-        iPhone app in live testing. Apple Watch field pulse in development. Research protocol available at HER2NI.
-      </p>
-    </section>
-
-    <footer>
-      <div>© 2026 HER2NI LLC. H.E.R and HER2NI. Patent pending: AU Provisional Patent Application No. 2026904580, filed 12 May 2026. All rights reserved.</div>
-      <div>
-        <a href="/privacy/">Privacy</a>
-        ·
-        <a href="/terms/">Terms</a>
-        ·
-        <a href="/support/">Support</a>
-        ·
-        <a href="https://her2ni.ai" target="_blank" rel="noopener noreferrer">HER2NI Research</a>
-        ·
-        <a href="mailto:research@her2ni.ai">Contact</a>
-      </div>
-    </footer>
   </main>
 
+  <footer>
+    <div class="shell footer-grid">
+      <div>
+        H.E.R™ and “Many intelligences. Single voice.”™ are trademarks of HER2NI LLC. Patent pending.
+      </div>
+      <div>
+        <a href="/build-week/privacy/">Privacy</a>
+        ·
+        <a href="/build-week/terms/">Terms</a>
+        ·
+        <a href="/build-week/support/">Support</a>
+        ·
+        <a href="https://her2ni.ai/" target="_blank" rel="noopener noreferrer">Research</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
