@@ -1,159 +1,57 @@
-# HER₂™ — Forensic Evidence System for Artificial Intelligence (Commercial)
+# H.E.R™ by HER2NI® — her2.ai
 
-**HER₂™** is a licensed forensic evidence system for artificial intelligence.
+This repository contains the public consumer website served at **https://her2.ai/**.
 
-It produces **recomputable, non-normative integrity records** of LLM and agent
-interaction trajectories for audit, litigation, due diligence, and incident
-reconstruction.
+H.E.R™ is the human-facing Intelligence Synthesis™ product being developed by
+HER2NI LLC for iPhone. The public site presents the current coming-soon and
+early-access surface.
 
-## License / Usage
+## Public website scope
 
-This repository is proprietary and provided for evaluation only. See `LICENSE`
-and `NOTICE`. No content logging; local-only.
+The intended public routes are:
 
-This repository serves as the **commercial coordination and access point** for
-HER₂™.  
-It does **not** contain the full private system source code.
+- `/` — H.E.R for iPhone
+- `/early-access/` — early-access information
+- `/privacy/` — privacy approach
+- `/terms/` — public terms and product boundaries
+- `/support/` — technical support and contact
 
----
+Government and institutional information is published separately at:
 
-## What This Repository Is
+- https://her2ni.ai/
 
-This repository provides:
+## Privacy posture
 
-- a public overview of the HER₂™ system and its scope,
-- links to evidence-pack documentation and overview materials,
-- licensing and engagement coordination for institutional access.
+The public her2.ai pages are static. They do not use third-party analytics,
+advertising trackers, remote fonts, tracking pixels, cookies, or persistent
+browser storage.
 
-It is intended for:
+Ordinary external links and `mailto:` links may leave the her2.ai origin when a
+visitor chooses to follow them.
 
-- audit, risk, and forensic practices,
-- banks, fintechs, and insurers,
-- litigation support and expert witness firms,
-- venture capital and private equity due diligence teams,
-- governance, compliance, and policy organizations.
+## What this repository is not
 
-Private system components are provided **only under license**.
+This repository is **not** the H.E.R application source, Relay source, Core
+source, provider runtime, or a distribution of private H.E.R engineering
+components.
 
----
+## Intellectual property
 
-## What HER₂™ Is
+Unless otherwise stated, the website source, design, text, graphics, imagery,
+and H.E.R visual identity are proprietary and all rights are reserved.
 
-HER₂™ is an **evidence layer**, not a control system.
+HER2NI® is a registered trade mark in Australia.
 
-At a system level, HER₂™:
+H.E.R™, H.E.R Ring™, Intelligence Synthesis™, Many intelligences. Single
+voice.™, Many intelligences. One voice.™, and One human. Many intelligences.
+Single voice.™ are trade marks used in connection with H.E.R™.
 
-- records AI interaction trajectories as immutable evidence artifacts,
-- binds declared inputs, outputs, evaluator context, and provenance metadata,
-- preserves temporal causality (append-only, no overwrite),
-- supports independent replay and recomputation,
-- produces signed evidence bundles suitable for adversarial review,
-- preserves outputs from **internal, third-party, or reference evaluators**
-  without requiring adoption of HER₂™ evaluation logic.
+Patents pending.
 
-HER₂™ operates **without access to model weights or training data** and does not
-modify, tune, suppress, or regenerate model outputs.
+See `LICENSE` and `NOTICE`.
 
----
+## Contact
 
-## What HER₂™ Is Not
+Consumer / H.E.R enquiries: **her@her2ni.ai**
 
-HER₂™ is intentionally constrained.
-
-It is **not**:
-
-- a model training or alignment method,
-- a control or enforcement system,
-- a correctness, truth, or ideology evaluator,
-- a safety certification or compliance authority by default,
-- a diagnostic or clinical tool.
-
-HER₂™ produces **evidence artifacts**, not judgments.  
-Interpretation and decision-making remain human- or institution-governed.
-
----
-
-## Relationship to HER2NI (Research)
-
-- **HER2NI** is the public, model-agnostic research protocol describing
-  interaction-level coherence metrics and theory.
-- **HER₂™** is a licensed system built on the HER2NI protocol family,
-  extended for forensic integrity recording, provenance, and evidentiary use.
-
-HER2NI research materials, specifications, and DOIs are available at:  
-https://her2ni.ai
-
-This repository does **not** redefine or replace the HER2NI protocol.
-
----
-
-## HER₂™ Evidence Pack Engagements
-
-HER₂™ is delivered via **case-scoped forensic evidence pack engagements**.
-
-Each engagement is narrowly scoped to a defined matter, system, or incident and
-produces a **standalone forensic evidence bundle** suitable for independent
-inspection, recomputation, and expert analysis.
-
-Evidence packs may include:
-
-- interaction integrity records (structured JSON artifacts),
-- evaluator fingerprints and execution context,
-- temporal lineage and causal ordering,
-- provenance hashes and signing material,
-- recomputation and replay instructions.
-
-Evidence packs are **evidence-only** by default and do not assert certification,
-compliance, or regulatory determination unless explicitly contracted.
-
-For an overview of scope and limitations, see:
-
-**HER₂™ — Forensic Evidence Pack (Overview PDF)**  
-(`/assets/HER2_Forensic_Evidence_Pack_Overview.pdf`)
-
----
-
-## Licensing & Access
-
-HER₂™ is **licensed software**.
-
-A license may grant access to:
-
-- private system components,
-- evidence schemas and manifests,
-- integrity and provenance tooling,
-- evaluator-agnostic evidence packaging,
-- integration and deployment guidance.
-
-A license does **not** grant:
-
-- ownership of the HER2NI protocol,
-- exclusivity over research designations,
-- certification or endorsement rights unless explicitly contracted,
-- medical, legal, or regulatory approval.
-
-For licensing or engagement enquiries:  
-**licensing@her2.ai**
-
----
-
-## Distribution Model
-
-HER₂™ is distributed via:
-
-- direct license agreements,
-- case-scoped forensic evidence engagements,
-- versioned releases to approved institutions.
-
-If you are viewing this repository without prior context,  
-please contact the maintainers.
-
----
-
-## Status
-
-- **Availability:** Licensed, case-scoped engagements  
-- **Release:** v0.1 (evidence-layer)  
-- **Roadmap:** By agreement
-
----
+Government and institutional enquiries: **https://her2ni.ai/**

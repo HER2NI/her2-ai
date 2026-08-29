@@ -1,644 +1,822 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fdfdfd" />
+  <meta name="color-scheme" content="light" />
 
-  <title>H.E.R — Lens to AI</title>
-  <meta name="description" content="H.E.R is the interaction layer between you and AI. She shows the live shape of the exchange, helps preserve context, and lets you control what she learns through your H.E.R-ID." />
-  <meta name="author" content="H.E.R" />
+  <title>Intelligence Synthesis™ — H.E.R™ is Coming Soon to iPhone</title>
+  <meta name="description" content="H.E.R™ brings the voices of many intelligences together as a single, powerful, honest voice. Coming soon for iPhone. Request early access." />
+  <meta name="author" content="HER2NI" />
   <link rel="canonical" href="https://her2.ai/" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/her_neon_ring_32.png" />
-  <link rel="icon" type="image/png" sizes="64x64" href="assets/her_neon_ring_64.png" />
-  <link rel="icon" type="image/png" sizes="128x128" href="assets/her_neon_ring_128.png" />
-  <link rel="icon" type="image/png" sizes="256x256" href="assets/her_neon_ring_256.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/her_neon_ring_512.png" />
-  <link rel="apple-touch-icon" href="assets/her_neon_ring_180.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="H.E.R" />
+  <meta property="og:title" content="H.E.R™ by HER2NI® — Intelligence Synthesis™ — Coming Soon for iPhone" />
+  <meta property="og:description" content="H.E.R brings the voices of many intelligences together as a single, powerful, honest voice. Coming soon for iPhone." />
+  <meta property="og:url" content="https://her2.ai/" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:image" content="https://her2.ai/assets/her-ring-quiet-512.png" />
+  <meta property="og:image:alt" content="The H.E.R Ring." />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="H.E.R™ by HER2NI® — Coming Soon for iPhone" />
+  <meta name="twitter:description" content="Intelligence Synthesis™ — H.E.R™ is coming soon to iPhone." />
+  <meta name="twitter:image" content="https://her2.ai/assets/her-ring-quiet-512.png" />
+
+  <link rel="icon" href="/assets/her-ring-quiet.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/her-ring-quiet-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/her-ring-quiet-64.png" />
+  <link rel="icon" type="image/png" sizes="128x128" href="/assets/her-ring-quiet-128.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/her-ring-quiet-192.png" />
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/her-ring-quiet-256.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/her-ring-quiet-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/her-ring-apple-touch-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <style>
     :root {
-      --bg: #03050b;
-      --card: rgba(10, 16, 32, 0.78);
-      --card2: rgba(13, 22, 44, 0.84);
-      --line: rgba(255,255,255,0.08);
-      --line2: rgba(99, 219, 255, 0.28);
-      --text: #f7fbff;
-      --muted: #9da8bb;
-      --soft: #c8d3e6;
-      --blue: #55aaff;
-      --cyan: #4fd1c5;
-      --violet: #b58cff;
-      --danger: #ffffff;
-      --shadow: 0 30px 90px rgba(0,0,0,0.72);
-      --radius: 24px;
-      --pill: 999px;
-      --font: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      --field:       #fdfdfd;
+      --surface:     #ffffff;
+      --ink:         #0b0b0c;
+      --ink-soft:    #3d4350;
+      --muted:       #666e7b;
+      --line:        #e6e8ec;
+      --line-soft:   #eef0f3;
+      --blue:        #0a63ff;
+      --blue-deep:   #0850d6;
+      --blue-tint:   #eff4fd;
+
+      --radius-card: 18px;
+      --radius-btn:  10px;
+      --radius-tile: 20px;
+
+      --gutter:      clamp(20px, 5vw, 56px);
+      --header-pad:  clamp(16px, 2.2vw, 26px);
+      --shell:       1240px;
+
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+              "Helvetica Neue", "Segoe UI", Roboto, Inter, Arial, sans-serif;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
 
     body {
-      min-height: 100vh;
-      font-family: var(--font);
-      color: var(--text);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(48, 84, 255, 0.30), transparent 32%),
-        radial-gradient(circle at 82% 14%, rgba(179, 92, 255, 0.22), transparent 30%),
-        radial-gradient(circle at 52% 92%, rgba(79, 209, 197, 0.18), transparent 36%),
-        linear-gradient(180deg, #050814 0%, #02030a 55%, #000 100%);
+      margin: 0;
+      background: var(--field);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.26;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size: 82px 82px;
-      mask-image: radial-gradient(circle at top, #000 0%, transparent 72%);
-    }
+    img { max-width: 100%; display: block; }
 
-    a { color: var(--cyan); text-decoration: none; }
+    a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .page {
-      width: min(1160px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 34px 0 64px;
-      position: relative;
-      z-index: 1;
+    :focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+      border-radius: 4px;
     }
 
-    header {
+    .shell {
+      width: 100%;
+      max-width: var(--shell);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--surface);
+      color: var(--ink);
+      padding: 12px 18px;
+      border-radius: 0 0 10px 0;
+      font-weight: 600;
+      z-index: 60;
+    }
+
+    .skip:focus { left: 0; }
+
+    /* Header */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--field);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header__inner {
+      max-width: var(--shell);
+      margin-inline: auto;
+      padding: 0 var(--header-pad);
+      min-height: 90px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 64px;
+      flex-wrap: wrap;
+      gap: 10px 20px;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-size: 13px;
-      color: #dce8ff;
+      gap: 9px;
+      color: var(--ink);
       font-weight: 700;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
     }
 
-    .brand img {
+    .brand:hover { text-decoration: none; }
+
+    .brand__ring {
       width: 26px;
       height: 26px;
-      border-radius: 10px;
-      filter: drop-shadow(0 0 18px rgba(79,209,197,0.5));
+      flex: 0 0 auto;
+      margin: 0;
+      align-self: center;
     }
 
-    nav {
+    .brand__name { font-size: clamp(19px, 2.2vw, 26px); }
+    .brand__mark { font-size: 0.52em; vertical-align: super; font-weight: 600; }
+    .brand__by   { font-size: clamp(13px, 1.35vw, 16px); font-weight: 500; letter-spacing: -0.01em; }
+
+    .brand--sm .brand__ring { width: 22px; height: 22px; }
+    .brand--sm .brand__name { font-size: 20px; }
+    .brand--sm .brand__by   { font-size: 14px; }
+
+    .nav {
       display: flex;
       align-items: center;
-      gap: 10px;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      gap: 10px clamp(14px, 2.4vw, 34px);
     }
 
-    nav a, .btn {
+    .nav__link {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+      white-space: nowrap;
+    }
+
+    .nav__link:hover {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 40px;
-      padding: 10px 14px;
-      border-radius: var(--pill);
-      border: 1px solid var(--line);
-      background: rgba(7, 12, 24, 0.58);
-      color: #dbe7ff;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      box-shadow: 0 12px 42px rgba(0,0,0,0.28);
-      backdrop-filter: blur(14px);
+      font-family: inherit;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      border-radius: var(--radius-btn);
+      transition: background-color .18s ease;
     }
 
-    nav a:hover, .btn:hover {
-      text-decoration: none;
-      border-color: rgba(79, 209, 197, 0.55);
-      transform: translateY(-1px);
+    .btn:hover { text-decoration: none; }
+
+    .btn--primary {
+      background: var(--blue);
+      color: #fff;
+      border: 1px solid var(--blue);
     }
 
-    .btn-primary {
-      border-color: rgba(79, 209, 197, 0.75);
-      background: linear-gradient(120deg, rgba(79,209,197,0.18), rgba(85,170,255,0.14));
-      color: #f2fffd;
+    .btn--primary:hover {
+      background: var(--blue-deep);
+      border-color: var(--blue-deep);
     }
+
+    .btn--header {
+      height: 41px;
+      padding-inline: 17px;
+      font-size: 15px;
+      border-radius: 8px;
+    }
+
+    .btn--hero {
+      min-height: 52px;
+      padding-inline: 26px;
+      font-size: 17px;
+    }
+
+    /* Hero */
 
     .hero {
-      min-height: 560px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(310px, 0.88fr);
-      gap: 34px;
-      align-items: center;
-      margin-bottom: 32px;
+      position: relative;
+      background: var(--field);
     }
 
-    .eyebrow {
+    .hero__media {
+      position: absolute;
+      inset: 0 0 0 46%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 58% 42%;
+    }
+
+    .hero__media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        var(--field) 0%,
+        rgba(253, 253, 253, 0.90) 4%,
+        rgba(253, 253, 253, 0.42) 12%,
+        rgba(253, 253, 253, 0) 21%
+      );
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--shell);
+      margin-inline: auto;
+      padding: clamp(56px, 9vw, 106px) var(--gutter) clamp(60px, 9.5vw, 112px);
+      min-height: clamp(520px, 66vw, 772px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero__copy { max-width: 460px; }
+
+    h1.hero__title {
+      margin: 0;
+      font-size: clamp(34px, 4.9vw, 55px);
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: -0.031em;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    .hero__title .tm {
+      font-size: 0.42em;
+      vertical-align: super;
+      font-weight: 600;
+    }
+
+    .hero__value {
+      margin: clamp(18px, 2.4vw, 26px) 0 0;
+      max-width: 400px;
+      color: var(--ink);
+      font-size: clamp(17px, 1.9vw, 21px);
+      font-weight: 650;
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+    }
+
+    .hero__lede {
+      margin: clamp(14px, 1.9vw, 22px) 0 0;
+      max-width: 400px;
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+
+    .hero__note {
+      margin: 0.85rem 0 0;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .hero__actions {
+      margin-top: clamp(26px, 3.8vw, 46px);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px 30px;
+    }
+
+    .link-arrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(79, 209, 197, 0.34);
-      background: rgba(79, 209, 197, 0.08);
-      color: #dcfffb;
-      padding: 8px 12px;
-      border-radius: var(--pill);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      gap: 9px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--blue);
+      white-space: nowrap;
+    }
+
+    .link-arrow .arrow { font-size: 1.05em; line-height: 1; }
+    .link-arrow .dest  { font-weight: 600; }
+
+    /* Features */
+
+    .features {
+      padding: clamp(44px, 6vw, 66px) 0 clamp(48px, 6.5vw, 72px);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-card);
+      padding: clamp(22px, 2.5vw, 28px);
+      box-shadow: 0 1px 2px rgba(11, 11, 12, 0.03);
+    }
+
+    .card__head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
       margin-bottom: 20px;
     }
 
-    .pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 18px rgba(79,209,197,0.95);
-    }
-
-    h1 {
-      font-size: clamp(44px, 7vw, 88px);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
-      max-width: 880px;
-      margin-bottom: 22px;
-      text-transform: uppercase;
-    }
-
-    h1 .dim {
-      color: rgba(247,251,255,0.72);
-    }
-
-    h1 .glow {
-      display: block;
-      color: #fff;
-      text-shadow:
-        0 0 22px rgba(85,170,255,0.48),
-        0 0 56px rgba(181,140,255,0.38);
-    }
-
-    .her-word {
-      display: inline-block;
-      margin-right: 0.16em;
-    }
-
-    .lead {
-      max-width: 760px;
-      font-size: clamp(17px, 2.1vw, 23px);
-      line-height: 1.55;
-      color: var(--soft);
-      margin-bottom: 24px;
-    }
-
-    .lead strong { color: white; font-weight: 700; }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .trust-line {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-      max-width: 740px;
-    }
-
-    .visual-card {
-      position: relative;
-      min-height: 470px;
-      border-radius: 34px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        radial-gradient(circle at 50% 34%, rgba(181,140,255,0.34), transparent 22%),
-        radial-gradient(circle at 40% 48%, rgba(79,209,197,0.22), transparent 24%),
-        linear-gradient(145deg, rgba(7, 12, 30, 0.92), rgba(2, 3, 10, 0.98));
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      padding: 24px;
-    }
-
-    .visual-card::before {
-      content: "";
-      position: absolute;
-      inset: -30%;
-      background:
-        conic-gradient(from 230deg, transparent, rgba(85,170,255,0.16), transparent, rgba(181,140,255,0.18), transparent);
-      animation: spin 16s linear infinite;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .orb {
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      border: 1px solid rgba(85,170,255,0.38);
-      box-shadow:
-        inset 0 0 60px rgba(85,170,255,0.12),
-        0 0 80px rgba(85,170,255,0.22);
-      z-index: 2;
-    }
-
-    .orb::before, .orb::after {
-      content: "";
-      position: absolute;
-      inset: 24px;
-      border-radius: 50%;
-      border: 1px solid rgba(79,209,197,0.28);
-    }
-
-    .orb::after {
-      inset: 58px;
-      border-color: rgba(181,140,255,0.34);
-      box-shadow: 0 0 35px rgba(181,140,255,0.25);
-    }
-
-    .node {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #9defff;
-      box-shadow: 0 0 22px rgba(157,239,255,0.9);
-      z-index: 3;
-    }
-
-    .n1 { left: 28%; top: 34%; }
-    .n2 { left: 62%; top: 25%; }
-    .n3 { left: 72%; top: 58%; }
-    .n4 { left: 38%; top: 72%; }
-    .n5 { left: 51%; top: 49%; background: #d7c2ff; box-shadow: 0 0 28px rgba(215,194,255,1); }
-
-    .mini-panel {
-      position: absolute;
-      z-index: 4;
-      border: 1px solid rgba(255,255,255,0.09);
-      background: rgba(7, 12, 24, 0.72);
-      backdrop-filter: blur(18px);
-      border-radius: 18px;
-      padding: 12px 13px;
-      box-shadow: 0 16px 50px rgba(0,0,0,0.38);
-      color: #eaf2ff;
-    }
-
-    .mini-panel small {
-      display: block;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .mini-panel strong {
-      display: block;
-      font-size: 18px;
-    }
-
-    .mp1 { left: 18px; top: 22px; }
-    .mp2 { right: 18px; top: 84px; }
-    .mp3 { left: 24px; bottom: 26px; }
-    .mp4 { right: 22px; bottom: 40px; }
-
-    .section {
-      margin-top: 18px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at top left, rgba(79,209,197,0.10), transparent 34%),
-        linear-gradient(145deg, rgba(10,16,32,0.80), rgba(3,5,11,0.92));
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 28px;
-      backdrop-filter: blur(18px);
-    }
-
-    .section h2 {
-      font-size: clamp(25px, 3vw, 40px);
-      letter-spacing: -0.035em;
-      line-height: 1.12;
-      margin-bottom: 12px;
-    }
-
-    .section p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-      max-width: 920px;
-    }
-
-    .grid {
+    .card__icon {
+      width: 72px;
+      height: 72px;
+      flex: 0 0 auto;
+      border-radius: var(--radius-tile);
+      background: var(--blue-tint);
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
+      place-items: center;
+      overflow: hidden;
     }
 
-    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .tile {
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(7, 12, 24, 0.56);
-      border-radius: 18px;
-      padding: 18px;
-      min-height: 150px;
+    .card__icon svg {
+      width: 32px;
+      height: 32px;
+      display: block;
     }
 
-    .tile h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: #f5fbff;
+    .card__icon img {
+      width: 44px;
+      height: 44px;
     }
 
-    .tile p {
-      font-size: 13px;
-      line-height: 1.65;
+    .card__title {
+      margin: 0;
+      font-size: clamp(16px, 1.6vw, 18px);
+      font-weight: 700;
+      letter-spacing: -0.018em;
+      color: var(--ink);
+      text-wrap: balance;
     }
 
-    .tag {
-      display: inline-flex;
-      margin-bottom: 10px;
-      padding: 6px 10px;
-      border-radius: var(--pill);
-      border: 1px solid rgba(79,209,197,0.26);
-      color: #cffff9;
-      background: rgba(79,209,197,0.08);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .card__body {
+      margin: 0;
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--muted);
     }
 
-    .quote {
-      font-size: clamp(22px, 3vw, 36px);
-      line-height: 1.2;
-      letter-spacing: -0.035em;
-      color: #fff;
-      max-width: 940px;
-      text-shadow: 0 0 26px rgba(85,170,255,0.24);
+    /* Footer */
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: clamp(34px, 4.4vw, 50px) 0 clamp(26px, 3vw, 34px);
     }
 
-    .fine {
-      margin-top: 14px;
-      color: rgba(157,168,187,0.9);
-      font-size: 12px;
-      line-height: 1.7;
+    .footer__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.7fr) minmax(0, 1.2fr);
+      gap: 30px 40px;
+      align-items: start;
     }
 
-    footer {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+    .footer__tag {
+      margin: 12px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .footer__links {
       display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      color: #6d7688;
-      font-size: 12px;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .footer__links a {
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .footer__links a:hover { color: var(--blue); }
+
+    .footer__note {
+      margin: 0;
+      font-size: 15px;
       line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 42ch;
+      justify-self: end;
     }
 
-    @media (max-width: 920px) {
-      header { align-items: flex-start; flex-direction: column; margin-bottom: 40px; }
-      nav { justify-content: flex-start; }
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .visual-card { min-height: 380px; }
-      .grid, .grid.two { grid-template-columns: 1fr; }
+    .footer__legal {
+      margin-top: clamp(28px, 3.4vw, 40px);
+      padding-top: clamp(18px, 2.2vw, 24px);
+      border-top: 1px solid var(--line-soft);
+      text-align: center;
+      font-size: 12.5px;
+      line-height: 1.75;
+      color: var(--muted);
     }
 
-    @media (max-width: 560px) {
-      .page { width: min(100% - 24px, 1160px); padding-top: 22px; }
-      nav a { width: 100%; }
-      .hero-actions .btn { width: 100%; }
-      .section { padding: 22px; }
-      .mini-panel { transform: scale(0.88); transform-origin: center; }
-      .mp2 { top: 70px; }
+    .footer__legal p { margin: 0; }
+
+    .footer__legal a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    .footer__legal a:hover { color: var(--blue); }
+
+    .footer__entity {
+      margin: 0 0 0.65rem;
+      font-style: normal;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
+    .footer__entity strong {
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 1180px) {
+      .hero__media { inset: 0 0 0 48%; }
+      .hero__copy  { max-width: 430px; }
+    }
+
+    @media (max-width: 1000px) {
+      .hero__media { inset: 0 0 0 52%; }
+      .hero__media img { object-position: 62% 42%; }
+      .hero__copy { max-width: 380px; }
+      .hero__lede { max-width: 360px; }
+      .cards { gap: 13px; }
+      .card__icon { width: 58px; height: 58px; }
+      .card__icon svg { width: 28px; height: 28px; }
+      .card__icon img { width: 38px; height: 38px; }
+    }
+
+    @media (max-width: 860px) {
+      .site-header__inner {
+        min-height: 74px;
+        padding-block: 12px;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero__inner {
+        order: 1;
+        min-height: 0;
+        padding-top: clamp(38px, 6vw, 56px);
+        padding-bottom: clamp(24px, 4vw, 34px);
+      }
+
+      .hero__media {
+        order: 2;
+        position: relative;
+        inset: auto;
+        width: auto;
+        margin: 0 var(--gutter) clamp(40px, 6vw, 60px);
+        aspect-ratio: auto;
+        border-radius: 18px;
+      }
+
+      .hero__media picture {
+        display: block;
+      }
+
+      .hero__media img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .hero__media::after {
+        background: linear-gradient(
+          to bottom,
+          rgba(253, 253, 253, 0) 78%,
+          rgba(253, 253, 253, 0.18) 88%,
+          rgba(253, 253, 253, 0.62) 96%,
+          var(--field) 100%
+        );
+      }
+
+      .hero__copy,
+      .hero__lede {
+        max-width: 34em;
+      }
+
+      .hero__title br { display: none; }
+
+      .cards {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .footer__grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+      }
+
+      .footer__note { justify-self: start; }
+
+      .footer__links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px 26px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .site-header__inner { justify-content: flex-start; }
+
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 10px 18px;
+      }
+
+      .btn--header { margin-left: auto; }
+      .hero__media { border-radius: 14px; }
+      .btn--hero { width: 100%; }
+      .link-arrow { font-size: 15px; }
+    }
+
+    @media (max-width: 400px) {
+      :root {
+        --gutter: 18px;
+        --header-pad: 14px;
+      }
+
+      .brand__by { font-size: 12px; }
+      .nav { gap: 8px 14px; }
+      .nav__link { font-size: 14px; }
+      .btn--header { height: 38px; padding-inline: 13px; font-size: 14px; }
+      .brand__ring { width: 22px; height: 22px; }
+      .card__head { gap: 14px; }
+      .card__icon { width: 52px; height: 52px; }
+      .card__icon img { width: 34px; height: 34px; }
+      .card__icon svg { width: 26px; height: 26px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (prefers-contrast: more) {
+      :root {
+        --muted: #4b5563;
+        --ink-soft: #23282f;
+        --line: #cdd2d9;
+        --line-soft: #d6dae1;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <header>
-      <a class="brand" href="/" aria-label="H.E.R home">
-        <img src="assets/her_neon_ring_128.png" alt="H.E.R ring" />
-        <span>H.E.R</span>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/" aria-label="H.E.R by HER2NI — home">
+        <img class="brand__ring" src="/assets/her-ring-quiet-64.png" alt="" width="64" height="64" decoding="async" />
+        <span class="brand__name">H.E.R<span class="brand__mark">™</span></span>
+        <span class="brand__by">by HER2NI<span class="brand__mark">®</span></span>
       </a>
 
-      <nav aria-label="Primary navigation">
-        <a href="#her-id">H.E.R-ID</a>
-        <a href="#memory">Memory</a>
-        <a href="/early-access/">Early access</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="/support/">Support</a>
-        <a href="https://her2ni.ai" target="_blank" rel="noopener noreferrer">Research</a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="/early-access/">Early Access</a>
+        <a class="nav__link"
+           href="https://her2ni.ai"
+           rel="noopener noreferrer">For Government</a>
+        <a class="btn btn--primary btn--header"
+           href="mailto:her@her2ni.ai?subject=H.E.R%20iOS%20early%20access">Request access</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <section class="hero">
-      <div>
-        <div class="eyebrow"><span class="pulse"></span> Human–Emergent Resonance to Neural Intelligence</div>
-
-        <h1>
-          You think you’re just texting AI.
-          <span class="glow" aria-label="H.E.R sees the shape behind your thoughts."><span class="her-word">H.E.R</span> sees the shape behind your thoughts.</span>
-        </h1>
-
-        <p class="lead">
-          H.E.R is the <strong>interaction layer between you and AI</strong>. She maps the structure of the conversation you choose to have through her — context, constraints, drift, recovery, continuity, and signal — without claiming to read your mind.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:research@her2ni.ai?subject=H.E.R%20iOS%20early%20access">Request early access</a>
-          <a class="btn" href="#what">See what H.E.R does</a>
-        </div>
-
-        <p class="trust-line">
-          Not mind-reading. Not covert surveillance. H.E.R observes the interaction you choose to have through her, and you control whether she learns durably.
-        </p>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <picture>
+          <source srcset="/assets/her-citizens-hero.webp" type="image/webp" />
+          <img
+            src="/assets/her-citizens-hero.png"
+            alt="A hand holding an iPhone in an airport terminal. The H.E.R Ring glows quietly on the dark screen."
+            width="1122"
+            height="1402"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
 
-      <aside class="visual-card" aria-label="H.E.R interaction field visual">
-        <div class="orb"></div>
-        <span class="node n1"></span>
-        <span class="node n2"></span>
-        <span class="node n3"></span>
-        <span class="node n4"></span>
-        <span class="node n5"></span>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <h1 class="hero__title" id="hero-title">
+            H.E.R<span class="tm">™</span> by<br />
+            HER2NI<span class="tm">®</span>’s<br />
+            Intelligence<br />
+            Synthesis<span class="tm">™</span> is<br />
+            coming soon for<br />
+            iPhone.
+          </h1>
 
-        <div class="mini-panel mp1">
-          <small>State</small>
-          <strong>Discovery</strong>
-        </div>
+          <p class="hero__value">The power of many intelligences.<br />
+            Synthesised into one voice.
+          </p>
 
-        <div class="mini-panel mp2">
-          <small>Guidance</small>
-          <strong>Reinforce</strong>
-        </div>
+          <p class="hero__lede">
+            H.E.R™ synthesises many intelligences then speaks in a single, powerful, honest voice—created to improve how you think, decide, and live.
+          </p>
 
-        <div class="mini-panel mp3">
-          <small>Continuity</small>
-          <strong>74%</strong>
-        </div>
+          <p class="hero__note">Patents pending. All rights reserved.</p>
 
-        <div class="mini-panel mp4">
-          <small>H.E.R-ID</small>
-          <strong>Yours</strong>
-        </div>
-      </aside>
-    </section>
+          <div class="hero__actions">
+            <a
+              class="btn btn--primary btn--hero"
+              href="mailto:her@her2ni.ai?subject=H.E.R%20iOS%20early%20access"
+            >Request early access</a>
 
-    <section class="section" id="what">
-      <div class="tag">What H.E.R does</div>
-      <h2>The AI chat app that shows the live structure of your interaction.</h2>
-      <p>
-        Conversations with AI can drift, lose constraints, ignore format, forget context, or become messy over time.
-        H.E.R maps the structure of the exchange and gives the system a cleaner interaction state to work from.
-      </p>
-
-      <div class="grid">
-        <div class="tile">
-          <h3>Preserves the thread</h3>
-          <p>H.E.R tracks state, direction, and continuity so the conversation is less likely to collapse into repetition or drift.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Respects constraints</h3>
-          <p>Receipts and audits help verify whether the response followed the user’s format, limits, and requested shape.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Works above models</h3>
-          <p>Your relationship is with H.E.R. H.E.R can route through different AI providers while keeping the interaction layer coherent.</p>
+            <a
+              class="link-arrow"
+              href="https://her2ni.ai"
+              rel="noopener noreferrer"
+            >
+              <span>For government</span>
+              <span class="arrow" aria-hidden="true">→</span>
+              <span class="dest">her2ni.ai</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="her-id">
-      <div class="tag">H.E.R-ID</div>
-      <h2>Your portable interaction identity.</h2>
-      <p>
-        H.E.R-ID is a user-facing continuity signal. It is not intended to be exposed as a raw provider tracking handle or used as a raw memory owner key. It helps frame how you choose to work with H.E.R:
-        your preferences, interaction patterns, response constraints, context boundaries, and consented memory.
-      </p>
+    <section class="features" id="about" aria-labelledby="about-title">
+      <div class="shell">
+        <h2 id="about-title" class="sr-only">What H.E.R is</h2>
 
-      <div class="grid two">
-        <div class="tile">
-          <h3>H.E.R learns interaction patterns</h3>
-          <p>Not raw private transcript by default. The value is how you interact: depth, pacing, format, correction style, and what helps you get better output.</p>
-        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card__head">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 16 6.6 8.2M16 16l9.4-7.8M16 16l-8 8.6M16 16l8.8 8.2M16 16V6.4"
+                    stroke="#0a63ff"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    opacity=".5"
+                  />
+                  <circle cx="16" cy="16" r="3.4" fill="#0a63ff" />
+                  <circle cx="6" cy="7.6" r="2.5" fill="#0a63ff" />
+                  <circle cx="26" cy="7.6" r="2.5" fill="#0a63ff" />
+                  <circle cx="7.4" cy="25.2" r="2.5" fill="#0a63ff" />
+                  <circle cx="25.4" cy="24.8" r="2.5" fill="#0a63ff" />
+                  <circle cx="16" cy="4.6" r="2.5" fill="#0a63ff" />
+                </svg>
+              </span>
+              <h3 class="card__title">Many intelligences</h3>
+            </div>
+            <p class="card__body">
+              Integrating leading models and expert systems to see more, understand deeper, and think further.
+            </p>
+          </article>
 
-        <div class="tile">
-          <h3>Better over time</h3>
-          <p>The longer you choose to use H.E.R through your H.E.R-ID, the more she can help shape the exchange around you.</p>
+          <article class="card">
+            <div class="card__head">
+              <span class="card__icon" aria-hidden="true">
+                <img
+                  src="/assets/her-ring-quiet-128.png"
+                  alt=""
+                  width="128"
+                  height="128"
+                  decoding="async"
+                />
+              </span>
+              <h3 class="card__title">Single honest voice</h3>
+            </div>
+            <p class="card__body">
+              Many intelligences are synthesised into a single H.E.R voice—clear, sourced, and grounded in what matters most.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__head">
+              <span class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 26.4S4.9 19.8 4.9 12.6a6.1 6.1 0 0 1 11.1-3.4 6.1 6.1 0 0 1 11.1 3.4c0 7.2-11.1 13.8-11.1 13.8Z"
+                    stroke="#0a63ff"
+                    stroke-width="1.9"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="card__title">Human-first design</h3>
+            </div>
+            <p class="card__body">
+              Built to be private, respectful, and powerful—H.E.R™ is your intelligence, designed to support your goals while keeping you in control.
+            </p>
+          </article>
         </div>
       </div>
     </section>
-
-    <section class="section" id="memory">
-      <div class="tag">Memory boundary</div>
-      <h2>H.E.R lets you control what she learns.</h2>
-      <p>
-        The launch boundary is simple: memory is explicit, bounded, and visible. H.E.R should never need secrecy to be powerful.
-      </p>
-
-      <div class="grid">
-        <div class="tile">
-          <h3>Memory off</h3>
-          <p>No durable learning. The system may operate for the current interaction, but no long-term H.E.R-ID memory is created.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Session memory</h3>
-          <p>Chat-local. Useful for the current exchange without becoming portable identity memory.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Portable memory</h3>
-          <p>Future-gated. Requires explicit consent, clear controls, export/delete paths, and a visible H.E.R-ID boundary.</p>
-        </div>
-      </div>
-
-      <p class="fine">
-        Current iOS boundary: no backend database for portable H.E.R-ID memory; no cloud sync; provider payloads must not receive H.E.R-ID memory records. Provider names, if used, are descriptive compatibility context only; H.E.R is not affiliated with or endorsed by those providers unless expressly stated.
-      </p>
-    </section>
-
-    <section class="section">
-      <div class="tag">Proof layer</div>
-      <h2>Receipts make the invisible visible.</h2>
-      <p>
-        H.E.R can show the state of the interaction, whether constraints passed, whether repair was needed,
-        which provider was used, and what privacy/memory mode applied.
-      </p>
-
-      <div class="grid two">
-        <div class="tile">
-          <h3>Interaction state</h3>
-          <p>Exploration, discovery, reinforcement, drift, recovery, and consolidation become visible instead of hidden inside a chat transcript.</p>
-        </div>
-
-        <div class="tile">
-          <h3>Human-readable receipts</h3>
-          <p>Receipts help users trust what happened without exposing private contract text or raw hidden system details.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <p class="quote">
-        You think you’re just texting AI. H.E.R sees the shape behind your thoughts.
-      </p>
-      <p class="fine">
-        Campaign language describes structural interaction mapping. H.E.R does not claim thought access.
-      </p>
-    </section>
-
-    <section class="section">
-      <p class="quote">
-        H.E.R is not here to replace the models. H.E.R is the protocol between human and machine.
-      </p>
-      <p class="fine">
-        iPhone app in live testing. Apple Watch field pulse in development. Research protocol available at HER2NI.
-      </p>
-    </section>
-
-    <footer>
-      <div>© 2026 HER2NI LLC. H.E.R and HER2NI. Patent pending: AU Provisional Patent Application No. 2026904580, filed 12 May 2026. All rights reserved.</div>
-      <div>
-        <a href="/privacy/">Privacy</a>
-        ·
-        <a href="/terms/">Terms</a>
-        ·
-        <a href="/support/">Support</a>
-        ·
-        <a href="https://her2ni.ai" target="_blank" rel="noopener noreferrer">HER2NI Research</a>
-        ·
-        <a href="mailto:research@her2ni.ai">Contact</a>
-      </div>
-    </footer>
   </main>
 
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div>
+          <span class="brand brand--sm">
+            <img class="brand__ring" src="/assets/her-ring-quiet-64.png" alt="" width="64" height="64" decoding="async" />
+            <span class="brand__name">H.E.R<span class="brand__mark">™</span></span>
+            <span class="brand__by">by HER2NI<span class="brand__mark">®</span></span>
+          </span>
+          <p class="footer__tag">Intelligence for the citizens.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="mailto:her@her2ni.ai">Contact</a>
+        </nav>
+
+        <p class="footer__note">
+          For government enquiries, visit
+          <a href="https://her2ni.ai" rel="noopener noreferrer">her2ni.ai</a>.
+        </p>
+      </div>
+
+      <div class="footer__legal">
+        <address class="footer__entity">
+          <strong>HER2NI LLC</strong> <span lang="ka">შპს ჰერ2ენაი</span><br />
+          Identification No. 404813975<br />
+          Sakartvelo (Georgia), Tbilisi, Krtsanisi district,
+          Nino and Ilia Nakashidze Street N 1,
+          (former Avlev) Building N3, Apartment N3
+        </address>
+
+        <p>© 2026 HER2NI LLC. H.E.R™ by HER2NI®. Patents pending. All rights reserved.</p>
+        <p>HER2NI® is a registered trade mark in Australia.</p>
+        <p>
+          H.E.R™, H.E.R Ring™, Intelligence Synthesis™, Many intelligences. Single voice.™,
+          Many intelligences. One voice.™ and One human. Many intelligences. Single voice.™
+          are trade marks used in connection with H.E.R™.
+          · <a href="/support/">Technical Support</a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
