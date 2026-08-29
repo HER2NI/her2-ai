@@ -266,11 +266,11 @@
       z-index: 1;
       max-width: var(--shell);
       margin-inline: auto;
-      padding: clamp(56px, 9vw, 106px) var(--gutter) clamp(60px, 9.5vw, 112px);
+      padding: clamp(38px, 4.5vw, 56px) var(--gutter) clamp(60px, 9.5vw, 112px);
       min-height: clamp(520px, 66vw, 772px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .hero__copy { max-width: 460px; }
@@ -309,19 +309,34 @@
       color: var(--ink-soft);
     }
 
+    .hero__actions {
+      margin-top: clamp(20px, 2.6vw, 30px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero__meta {
+      margin-top: 16px;
+      max-width: 430px;
+    }
+
     .hero__note {
-      margin: 0.85rem 0 0;
+      margin: 0;
       font-size: 12.5px;
       line-height: 1.55;
       color: var(--muted);
     }
 
-    .hero__actions {
-      margin-top: clamp(26px, 3.8vw, 46px);
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px 30px;
+    .hero__provenance {
+      margin: 20px 0 0;
+      max-width: 430px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .hero__meta .link-arrow {
+      margin-top: 18px;
     }
 
     .link-arrow {
@@ -332,10 +347,21 @@
       font-weight: 500;
       color: var(--blue);
       white-space: nowrap;
+      text-decoration: none;
+      transition: color .18s ease;
     }
 
-    .link-arrow .arrow { font-size: 1.05em; line-height: 1; }
-    .link-arrow .dest  { font-weight: 600; }
+    .link-arrow:hover {
+      color: var(--blue-deep);
+      text-decoration: none;
+    }
+
+    .link-arrow .arrow {
+      font-size: 1.05em;
+      line-height: 1;
+    }
+
+    .link-arrow .dest { font-weight: 600; }
 
     /* Features */
 
@@ -420,6 +446,30 @@
       margin: 12px 0 0;
       font-size: 14px;
       color: var(--muted);
+    }
+
+    .footer__socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .footer__social {
+      display: inline-flex;
+      width: 19px;
+      height: 19px;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      opacity: 0.72;
+    }
+
+    .footer__social svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      fill: currentColor;
     }
 
     .footer__links {
@@ -666,27 +716,32 @@
           <h1 class="hero__title" id="hero-title">
             H.E.R<span class="tm">™</span> by<br />
             HER2NI<span class="tm">®</span>’s<br />
-            Intelligence<br />
-            Synthesis<span class="tm">™</span> is<br />
-            coming soon for<br />
-            iPhone.
+            Intelligence Synthesis<span class="tm">™</span><br />
+            is coming soon<br />
+            for iPhone.
           </h1>
 
           <p class="hero__value">The power of many intelligences.<br />
-            Synthesised into one voice.
+            Synthesised into a single voice.
           </p>
 
           <p class="hero__lede">
-            H.E.R™ synthesises many intelligences then speaks in a single, powerful, honest voice—created to improve how you think, decide, and live.
+            H.E.R™ synthesises many intelligences then speaks in one powerful, honest voice—created to improve how you think, decide, and live.
           </p>
-
-          <p class="hero__note">Patents pending. All rights reserved.</p>
 
           <div class="hero__actions">
             <a
               class="btn btn--primary btn--hero"
               href="mailto:her@her2ni.ai?subject=H.E.R%20iOS%20early%20access"
             >Request early access</a>
+          </div>
+
+          <div class="hero__meta">
+            <p class="hero__note">Patents pending. All rights reserved.</p>
+
+            <p class="hero__provenance">
+              Built on the same Intelligence Synthesis™ foundation developed for high-consequence government and defence contexts—adapted for citizens on iPhone with consumer safeguards.
+            </p>
 
             <a
               class="link-arrow"
@@ -784,6 +839,32 @@
             <span class="brand__by">by HER2NI<span class="brand__mark">®</span></span>
           </span>
           <p class="footer__tag">Intelligence for the citizens.</p>
+
+          <div class="footer__socials" aria-hidden="true">
+            <span class="footer__social" title="X — coming soon">
+              <svg viewBox="0 0 24 24">
+                <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.26-8.3L2.97 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.84h1.72L8.44 4.05H6.6L17.8 19.84Z"/>
+              </svg>
+            </span>
+
+            <span class="footer__social" title="LinkedIn — coming soon">
+              <svg viewBox="0 0 24 24">
+                <path d="M5.34 3.5A1.84 1.84 0 1 1 5.33 7.2 1.84 1.84 0 0 1 5.34 3.5ZM3.74 8.7h3.2V19h-3.2V8.7Zm5.18 0h3.07v1.41h.04c.43-.81 1.47-1.67 3.03-1.67 3.24 0 3.84 2.13 3.84 4.9V19h-3.2v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V19H8.92V8.7Z"/>
+              </svg>
+            </span>
+
+            <span class="footer__social" title="Instagram — coming soon">
+              <svg viewBox="0 0 24 24">
+                <path d="M7.4 2h9.2A5.4 5.4 0 0 1 22 7.4v9.2a5.4 5.4 0 0 1-5.4 5.4H7.4A5.4 5.4 0 0 1 2 16.6V7.4A5.4 5.4 0 0 1 7.4 2Zm0 2A3.4 3.4 0 0 0 4 7.4v9.2A3.4 3.4 0 0 0 7.4 20h9.2a3.4 3.4 0 0 0 3.4-3.4V7.4A3.4 3.4 0 0 0 16.6 4H7.4Zm9.7 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+              </svg>
+            </span>
+
+            <span class="footer__social" title="Facebook — coming soon">
+              <svg viewBox="0 0 24 24">
+                <path d="M13.7 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5H17V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H8.2V14h2.6v8h2.9Z"/>
+              </svg>
+            </span>
+          </div>
         </div>
 
         <nav class="footer__links" aria-label="Footer">
