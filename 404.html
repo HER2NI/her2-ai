@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fdfdfd" />
+  <meta name="color-scheme" content="light" />
+  <meta name="robots" content="noindex,follow" />
+
+  <title>Page Not Found — H.E.R™ by HER2NI®</title>
+  <meta
+    name="description"
+    content="The page you requested could not be found. Return to H.E.R™ by HER2NI®."
+  />
+
+  <link rel="icon" href="/assets/her-ring-quiet.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/her-ring-quiet-64.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/her-ring-apple-touch-180.png" />
+
+  <style>
+    :root {
+      --field: #fdfdfd;
+      --ink: #0b0b0c;
+      --muted: #666e7b;
+      --blue: #0a63ff;
+      --line: #e6e8ec;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+              "Helvetica Neue", "Segoe UI", Roboto, Inter, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--field);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(20px, 5vw, 56px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .ring {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+
+    .name { font-size: 22px; }
+
+    .mark {
+      font-size: 0.52em;
+      vertical-align: super;
+      font-weight: 600;
+    }
+
+    .by {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: clamp(52px, 10vw, 110px) clamp(20px, 5vw, 56px);
+    }
+
+    .content {
+      width: min(100%, 600px);
+      text-align: center;
+    }
+
+    .hero-ring {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 28px;
+    }
+
+    .code {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 22px auto 0;
+      max-width: 34em;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .home {
+      display: inline-flex;
+      margin-top: 34px;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border-radius: 10px;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 26px clamp(20px, 5vw, 56px);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12.5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="brand" href="/" aria-label="H.E.R by HER2NI — home">
+      <img class="ring" src="/assets/her-ring-quiet-64.png" alt="" width="64" height="64" />
+      <span class="name">H.E.R<span class="mark">™</span></span>
+      <span class="by">by HER2NI<span class="mark">®</span></span>
+    </a>
+  </header>
+
+  <main>
+    <div class="content">
+      <img
+        class="hero-ring"
+        src="/assets/her-ring-quiet-128.png"
+        alt=""
+        width="128"
+        height="128"
+      />
+
+      <p class="code">404</p>
+      <h1>Page not found.</h1>
+
+      <p>
+        The page you requested is not here.
+        H.E.R™ is waiting at the beginning.
+      </p>
+
+      <a class="home" href="/">Return to H.E.R™</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 HER2NI LLC. H.E.R™ by HER2NI®. All rights reserved.
+  </footer>
+</body>
+</html>
