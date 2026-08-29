@@ -1,71 +1,384 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>H.E.R Support</title>
-  <meta name="description" content="Support contacts for H.E.R early access, privacy, export, delete, and App Store support." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fdfdfd" />
+  <meta name="color-scheme" content="light" />
+  <title>H.E.R™ Technical Support</title>
+  <meta name="description" content="Technical support, early-access, privacy, and security contact information for H.E.R." />
+  <meta name="author" content="HER2NI" />
   <link rel="canonical" href="https://her2.ai/support/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="H.E.R" />
+  <meta property="og:title" content="H.E.R™ Technical Support" />
+  <meta property="og:description" content="Technical support, early-access, privacy, and security contact information for H.E.R." />
+  <meta property="og:url" content="https://her2.ai/support/" />
+  <meta property="og:image" content="https://her2.ai/assets/her-ring-quiet-512.png" />
+  <meta property="og:image:alt" content="The H.E.R Ring." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="H.E.R™ Technical Support" />
+  <meta name="twitter:description" content="Technical support, early-access, privacy, and security contact information for H.E.R." />
+  <meta name="twitter:image" content="https://her2.ai/assets/her-ring-quiet-512.png" />
+  <link rel="icon" href="/assets/her-ring-quiet.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/her-ring-quiet-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/her-ring-quiet-64.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/her-ring-quiet-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/her-ring-quiet-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/her-ring-apple-touch-180.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <style>
-    :root { color-scheme: dark; --bg:#03050b; --card:#0b1020; --line:rgba(255,255,255,.12); --text:#f7fbff; --muted:#aab6c8; --cyan:#4fd1c5; --blue:#55aaff; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif; color:var(--text); background: radial-gradient(circle at 20% 0%, rgba(85,170,255,.22), transparent 30%), radial-gradient(circle at 80% 12%, rgba(79,209,197,.14), transparent 32%), linear-gradient(180deg,#050814,#02030a 70%,#000); line-height:1.6; }
-    .page { width:min(920px, calc(100% - 36px)); margin:0 auto; padding:34px 0 56px; }
-    header, footer { display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap; }
-    header { margin-bottom:48px; }
-    footer { margin-top:44px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); padding-top:24px; }
-    .brand { color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
-    nav { display:flex; gap:10px; flex-wrap:wrap; }
-    a { color:var(--cyan); text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    nav a, .btn { border:1px solid var(--line); border-radius:999px; padding:9px 13px; color:#dce8ff; background:rgba(7,12,24,.58); font-size:12px; text-transform:uppercase; letter-spacing:.08em; text-decoration:none; }
-    .btn-primary { border-color:rgba(79,209,197,.75); color:#f2fffd; background:rgba(79,209,197,.12); }
-    .hero, .card { border:1px solid var(--line); border-radius:26px; background:rgba(10,16,32,.76); box-shadow:0 30px 90px rgba(0,0,0,.5); padding:28px; }
-    .hero { margin-bottom:22px; }
-    h1 { font-size:clamp(38px,7vw,74px); line-height:.98; letter-spacing:-.06em; margin:0 0 18px; text-transform:uppercase; }
-    h2 { font-size:28px; line-height:1.15; margin:0 0 14px; }
-    h3 { margin:22px 0 8px; }
-    p, li { color:var(--muted); }
-    .lead { font-size:20px; color:#d8e5f8; max-width:780px; }
-    .trust { margin-top:18px; color:#c8d3e6; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:16px; }
-    .card { padding:22px; }
-    .fine { font-size:13px; color:#8f9caf; }
-    ul { padding-left:20px; }
-    @media (max-width:720px) { .grid { grid-template-columns:1fr; } h1 { font-size:40px; } }
+    :root {
+      --field:#fdfdfd;
+      --surface:#ffffff;
+      --ink:#0b0b0c;
+      --ink-soft:#3d4350;
+      --muted:#666e7b;
+      --line:#e6e8ec;
+      --line-soft:#eef0f3;
+      --blue:#0a63ff;
+      --blue-deep:#0850d6;
+      --blue-tint:#eff4fd;
+      --shell:1240px;
+      --content:860px;
+      --gutter:clamp(20px,5vw,56px);
+      --header-pad:clamp(16px,2.2vw,26px);
+      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue","Segoe UI",Roboto,Inter,Arial,sans-serif;
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      min-width:320px;
+      background:var(--field);
+      color:var(--ink);
+      font-family:var(--sans);
+      font-size:17px;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+    .skip{
+      position:absolute;left:-9999px;top:0;z-index:60;
+      padding:12px 18px;border-radius:0 0 10px 0;
+      background:var(--surface);color:var(--ink);font-weight:600
+    }
+    .skip:focus{left:0}
+
+    .site-header{
+      position:sticky;top:0;z-index:40;
+      background:var(--field);
+      border-bottom:1px solid var(--line)
+    }
+    .site-header__inner{
+      max-width:var(--shell);
+      margin-inline:auto;
+      padding:0 var(--header-pad);
+      min-height:90px;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:10px 20px
+    }
+    .brand{
+      display:inline-flex;align-items:center;gap:9px;
+      color:var(--ink);font-weight:700;letter-spacing:-.02em;
+      white-space:nowrap
+    }
+    .brand:hover{text-decoration:none}
+    .brand__ring{width:26px;height:26px;flex:0 0 auto;margin:0;align-self:center}
+    .brand__name{font-size:clamp(19px,2.2vw,26px)}
+    .brand__mark{font-size:.52em;vertical-align:super;font-weight:600}
+    .brand__by{font-size:clamp(13px,1.35vw,16px);font-weight:500;letter-spacing:-.01em}
+
+    .nav{
+      display:flex;align-items:center;flex-wrap:wrap;
+      gap:10px clamp(14px,2.4vw,30px)
+    }
+    .nav__link{
+      color:var(--ink);font-size:15px;font-weight:500;
+      letter-spacing:-.005em;white-space:nowrap
+    }
+    .nav__link:hover{color:var(--blue);text-decoration:none}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:44px;padding:0 18px;
+      border:1px solid var(--blue);border-radius:9px;
+      background:var(--blue);color:#fff;
+      font:600 15px/1 var(--sans);letter-spacing:-.01em
+    }
+    .btn:hover{background:var(--blue-deep);border-color:var(--blue-deep);text-decoration:none}
+
+    .page{
+      width:min(calc(100% - 2 * var(--gutter)),var(--content));
+      margin-inline:auto;
+      padding:clamp(56px,8vw,96px) 0 clamp(72px,9vw,112px)
+    }
+    .kicker{
+      margin:0 0 14px;color:var(--blue);
+      font-size:13px;font-weight:650;letter-spacing:.08em;
+      text-transform:uppercase
+    }
+    h1{
+      margin:0;
+      max-width:13ch;
+      font-size:clamp(42px,7vw,72px);
+      line-height:1.01;font-weight:720;letter-spacing:-.055em
+    }
+    .lead{
+      max-width:680px;margin:24px 0 0;
+      color:var(--ink-soft);
+      font-size:clamp(18px,2.2vw,21px);line-height:1.55
+    }
+    .hero-actions{
+      display:flex;align-items:center;flex-wrap:wrap;
+      gap:14px 24px;margin-top:30px
+    }
+    .text-link{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:15px;font-weight:600
+    }
+
+    .policy{
+      margin-top:clamp(44px,6vw,68px);
+      padding-top:clamp(36px,5vw,52px);
+      border-top:1px solid var(--line)
+    }
+    .policy section+section{
+      margin-top:34px;padding-top:30px;border-top:1px solid var(--line-soft)
+    }
+    h2{
+      margin:0 0 12px;
+      font-size:clamp(24px,3.5vw,32px);
+      line-height:1.15;letter-spacing:-.03em
+    }
+    h3{
+      margin:22px 0 8px;
+      font-size:18px;line-height:1.3;letter-spacing:-.015em
+    }
+    p,li{color:var(--muted)}
+    p{margin:0}
+    p+p{margin-top:14px}
+    ul{margin:12px 0 0;padding-left:1.2rem}
+    li+li{margin-top:7px}
+    strong{color:var(--ink-soft)}
+    .note{
+      margin-top:20px;padding:18px 20px;
+      border:1px solid var(--line-soft);border-radius:14px;
+      background:var(--surface);color:var(--ink-soft)
+    }
+    .contact-box{
+      margin-top:20px;padding:22px;
+      border:1px solid var(--line-soft);border-radius:16px;
+      background:var(--blue-tint)
+    }
+    .contact-box p{color:var(--ink-soft)}
+    .contact-box a{font-weight:650}
+
+    .site-footer{
+      border-top:1px solid var(--line);
+      padding:clamp(34px,4.4vw,50px) 0 clamp(26px,3vw,34px)
+    }
+    .shell{
+      width:100%;max-width:var(--shell);
+      margin-inline:auto;padding-inline:var(--gutter)
+    }
+    .footer__grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,.7fr) minmax(0,1.2fr);
+      gap:30px 40px;align-items:start
+    }
+    .brand--sm .brand__ring{width:22px;height:22px}
+    .brand--sm .brand__name{font-size:20px}
+    .brand--sm .brand__by{font-size:14px}
+    .footer__tag{margin:12px 0 0;font-size:14px;color:var(--muted)}
+    .footer__links{display:flex;flex-direction:column;gap:13px}
+    .footer__links a{color:var(--ink-soft);font-size:15px}
+    .footer__links a:hover{color:var(--blue)}
+    .footer__note{
+      margin:0;font-size:15px;line-height:1.6;
+      color:var(--ink-soft);max-width:42ch;justify-self:end
+    }
+    .footer__legal{
+      margin-top:clamp(28px,3.4vw,40px);
+      padding-top:clamp(18px,2.2vw,24px);
+      border-top:1px solid var(--line-soft);
+      text-align:center;font-size:12.5px;line-height:1.75;color:var(--muted)
+    }
+    .footer__legal p{margin:0}
+    .footer__legal a{color:var(--muted);text-decoration:underline}
+    .footer__legal a:hover{color:var(--blue)}
+    .footer__entity{
+      margin:0 0 .65rem;font-style:normal;color:var(--muted);text-wrap:pretty
+    }
+    .footer__entity strong{color:var(--ink-soft);font-weight:600}
+
+    @media(max-width:860px){
+      .site-header__inner{min-height:74px;padding-block:12px}
+      .footer__grid{grid-template-columns:1fr;gap:26px}
+      .footer__note{justify-self:start}
+      .footer__links{flex-direction:row;flex-wrap:wrap;gap:12px 26px}
+    }
+    @media(max-width:600px){
+      .site-header__inner{justify-content:flex-start}
+      .nav{width:100%;justify-content:flex-start;gap:10px 18px}
+      .nav .btn{margin-left:auto}
+      .page{width:min(calc(100% - 36px),var(--content))}
+    }
+    @media(max-width:400px){
+      :root{--gutter:18px;--header-pad:14px}
+      .brand__by{font-size:12px}
+      .nav{gap:8px 14px}
+      .nav__link{font-size:14px}
+      .nav .btn{min-height:40px;padding-inline:14px;font-size:14px}
+      .brand__ring{width:22px;height:22px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        animation-duration:.001ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.001ms!important;
+        scroll-behavior:auto!important
+      }
+    }
+    @media(prefers-contrast:more){
+      :root{
+        --muted:#4b5563;--ink-soft:#23282f;
+        --line:#cdd2d9;--line-soft:#d6dae1
+      }
+    }
   </style>
+
 </head>
 <body>
-  <main class="page">
-    <header>
-      <a class="brand" href="/">H.E.R</a>
-      <nav aria-label="Primary navigation">
-        <a href="/early-access/">Early access</a>
-        <a href="/privacy/">Privacy</a>
-        <a href="/terms/">Terms</a>
-        <a href="/support/">Support</a>
-      </nav>
-    </header>
-    <section class="hero">
-      <h1>Support</h1>
-      <p class="lead">For early access support, privacy requests, export/delete questions, and App Store support, contact the H.E.R team.</p>
-    </section>
-    <section class="card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:research@her2ni.ai">research@her2ni.ai</a></p>
-      <h3>Privacy / delete / export requests</h3>
-      <p>Use <a href="mailto:research@her2ni.ai?subject=H.E.R%20privacy%2Fdelete%2Fexport%20request">research@her2ni.ai</a> and include the request type in the subject line.</p>
-      <h3>Early access support</h3>
-      <p>For iOS early access questions, use <a href="mailto:research@her2ni.ai?subject=H.E.R%20iOS%20early%20access">the early access email link</a>.</p>
-      <h3>App Store support</h3>
-      <p>App Store support details will be published when the iOS app is available through Apple distribution.</p>
-    </section>
 
-    <footer>
-      <div>© 2026 HER2NI LLC. H.E.R and HER2NI. Patent pending: AU Provisional Patent Application No. 2026904580, filed 12 May 2026. All rights reserved.</div>
-      <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a> · <a href="/support/">Support</a> · <a href="mailto:research@her2ni.ai">Contact</a></div>
-    </footer>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="/" aria-label="H.E.R by HER2NI — home">
+        <img class="brand__ring" src="/assets/her-ring-quiet-64.png" alt="" width="64" height="64" decoding="async" />
+        <span class="brand__name">H.E.R<span class="brand__mark">™</span></span>
+        <span class="brand__by">by HER2NI<span class="brand__mark">®</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="/">Home</a>
+        <a class="nav__link" href="/privacy/">Privacy</a>
+        <a class="nav__link" href="/terms/">Terms</a>
+        <a class="nav__link" href="/support/">Support</a>
+        <a class="btn" href="mailto:her@her2ni.ai?subject=H.E.R%20iOS%20early%20access">Request access</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+
+    <p class="kicker">H.E.R support</p>
+    <h1>How can we help?</h1>
+    <p class="lead">
+      Contact HER2NI for H.E.R early access, technical support, privacy
+      requests, or security reports.
+    </p>
+
+    <div class="policy">
+      <section>
+        <h2>Technical support</h2>
+        <div class="contact-box">
+          <p>
+            Email <a href="mailto:her@her2ni.ai?subject=H.E.R%20technical%20support">her@her2ni.ai</a>
+            with a concise description of the issue, the device or platform
+            involved, and what you expected to happen.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Early access</h2>
+        <p>
+          For iPhone early-access enquiries, use the dedicated request link.
+        </p>
+        <p>
+          <a href="mailto:her@her2ni.ai?subject=H.E.R%20iOS%20early%20access">Request H.E.R iOS early access →</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Privacy, export, or deletion</h2>
+        <p>
+          Send privacy-related requests to
+          <a href="mailto:her@her2ni.ai?subject=H.E.R%20privacy%2Fdelete%2Fexport%20request">her@her2ni.ai</a>
+          and identify the request type.
+        </p>
+      </section>
+
+      <section>
+        <h2>Security reports</h2>
+        <p>
+          Report security concerns to
+          <a href="mailto:her@her2ni.ai?subject=H.E.R%20security%20report">her@her2ni.ai</a>.
+          Describe the affected public surface and observed behaviour.
+          Do not include passwords, API keys, private user data, or other
+          secrets in the report.
+        </p>
+      </section>
+
+      <section>
+        <h2>App Store support</h2>
+        <p>
+          H.E.R for iPhone is not yet represented on this site as generally
+          available through Apple distribution. App Store-specific support
+          details will be published when that distribution path is available.
+        </p>
+      </section>
+    </div>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer__grid">
+        <div>
+          <span class="brand brand--sm">
+            <img class="brand__ring" src="/assets/her-ring-quiet-64.png" alt="" width="64" height="64" decoding="async" />
+            <span class="brand__name">H.E.R<span class="brand__mark">™</span></span>
+            <span class="brand__by">by HER2NI<span class="brand__mark">®</span></span>
+          </span>
+          <p class="footer__tag">Intelligence for the citizens.</p>
+        </div>
+        <nav class="footer__links" aria-label="Footer">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/support/">Technical Support</a>
+          <a href="mailto:her@her2ni.ai">Contact</a>
+        </nav>
+        <p class="footer__note">
+          For government enquiries, visit
+          <a href="https://her2ni.ai" rel="noopener noreferrer">her2ni.ai</a>.
+        </p>
+      </div>
+      <div class="footer__legal">
+        <address class="footer__entity">
+          <strong>HER2NI LLC</strong> <span lang="ka">შპს ჰერ2ენაი</span><br />
+          Identification No. 404813975<br />
+          Sakartvelo (Georgia), Tbilisi, Krtsanisi district,
+          Nino and Ilia Nakashidze Street N 1,
+          (former Avlev) Building N3, Apartment N3
+        </address>
+        <p>© 2026 HER2NI LLC. H.E.R™ by HER2NI®. Patents pending. All rights reserved.</p>
+        <p>HER2NI® is a registered trade mark in Australia.</p>
+        <p>
+          H.E.R™, H.E.R Ring™, Intelligence Synthesis™, Many intelligences. Single voice.™,
+          Many intelligences. One voice.™ and One human. Many intelligences. Single voice.™
+          are trade marks used in connection with H.E.R™.
+        </p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
