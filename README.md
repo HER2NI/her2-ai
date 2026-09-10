@@ -1,4 +1,6 @@
-# H.E.R™ by HER2NI® — her2.ai
+# H.E.R™ by HER2NI® — Intelligence Synthesis™ for iPhone
+
+**Many intelligences, synthesised into a single voice.**
 
 This repository contains the public consumer website served at **https://her2.ai/**.
 
