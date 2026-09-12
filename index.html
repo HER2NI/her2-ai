@@ -1382,6 +1382,30 @@
       </div>
     </div>
   </footer>
+  <!-- H.E.R navigation interaction v1 -->
+  <script>
+    (() => {
+      const link = document.querySelector('.nav__link[href="#about"]');
+      const section = document.querySelector("#about");
+
+      if (!link || !section) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        },
+        {
+          threshold: 0.25
+        }
+      );
+
+      observer.observe(section);
+    })();
+  </script>
 </body>
 <!-- ★ #4KitKat -->
 </html>
