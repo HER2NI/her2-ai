@@ -45,8 +45,7 @@ and H.E.R visual identity are proprietary and all rights are reserved.
 HER2NI® is a registered trade mark in Australia.
 
 H.E.R™, H.E.R Ring™, Intelligence Synthesis™, Many intelligences. Single
-voice.™, Many intelligences. One voice.™, and One human. Many intelligences.
-Single voice.™ are trade marks used in connection with H.E.R™.
+voice.™, Many intelligences. One voice.™ are trade marks used in connection with H.E.R™.
 
 Patents pending.
 
