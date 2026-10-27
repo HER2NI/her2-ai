@@ -1,58 +1,33 @@
-# H.E.R™ by HER2NI® — Intelligence Synthesis™ for iPhone
+# H.E.R™ — her2.ai
 
-**Many intelligences, synthesised into a single voice.**
+This public repository holds the **compiled static website** for [H.E.R™](https://her2.ai/),
+a human-directed Intelligence Synthesis™ environment in development by **HER2NI LLC**.
 
-This repository contains the public consumer website served at **https://her2.ai/**.
+## Public pages
 
-H.E.R™ is the human-facing Intelligence Synthesis™ product being developed by
-HER2NI LLC for iPhone. The public site presents the current coming-soon and
-early-access surface.
+- `/` — HER2·I first-generation product/appearance study
+- `/about-this-study/` — scope and limitations of the illustrative study
 
-## Public website scope
+The Starfire encounter on the website is **scripted and illustrative**. Named intelligences,
+routing, responses, consultation intervals and synthesis statements are design examples;
+there are no live provider calls, actual model contributions or operating synthesis
+measurements in the website. The H.E.R iPhone app is not yet publicly available.
 
-The intended public routes are:
+## Technical publication boundary
 
-- `/` — H.E.R for iPhone
-- `/early-access/` — early-access information
-- `/privacy/` — privacy approach
-- `/terms/` — public terms and product boundaries
-- `/support/` — technical support and contact
+Astro builds the website into static HTML, CSS, JavaScript, images, fonts and one
+selected recorded MP3. This repository does **not** distribute editable Astro source,
+private design records, earlier audio candidates, credentials, native client source,
+Relay/Core implementations or live H.E.R infrastructure.
 
-Government and institutional information is published separately at:
+The website does not collect notification signups, and a contact mail link invokes
+the visitor's own email application. No provider partnership or endorsement is claimed
+by the illustrative model names.
 
-- https://her2ni.ai/
+## Identity and rights
 
-## Privacy posture
+HER2NI LLC · Georgia. Unless otherwise stated, public website content is proprietary.
+See `LICENSE` and `NOTICE`. HER2NI® is a registered Australian trade mark;
+H.E.R™ and related designations are used as trade marks.
 
-The public her2.ai pages are static. They do not use third-party analytics,
-advertising trackers, remote fonts, tracking pixels, cookies, or persistent
-browser storage.
-
-Ordinary external links and `mailto:` links may leave the her2.ai origin when a
-visitor chooses to follow them.
-
-## What this repository is not
-
-This repository is **not** the H.E.R application source, Relay source, Core
-source, provider runtime, or a distribution of private H.E.R engineering
-components.
-
-## Intellectual property
-
-Unless otherwise stated, the website source, design, text, graphics, imagery,
-and H.E.R visual identity are proprietary and all rights are reserved.
-
-HER2NI® is a registered trade mark in Australia.
-
-H.E.R™, H.E.R Ring™, Intelligence Synthesis™, Many intelligences. Single
-voice.™, Many intelligences. One voice.™ are trade marks used in connection with H.E.R™.
-
-Patents pending.
-
-See `LICENSE` and `NOTICE`.
-
-## Contact
-
-Consumer / H.E.R enquiries: **her@her2ni.ai**
-
-Government and institutional enquiries: **https://her2ni.ai/**
+Contact: her@her2ni.ai  |  Institutional research: https://her2ni.ai/
